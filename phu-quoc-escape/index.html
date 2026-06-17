@@ -226,6 +226,58 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
   padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:.25s;white-space:nowrap}
 .card:hover .view{background:linear-gradient(115deg,var(--teal),var(--green));color:var(--dark)}
 .list-note{text-align:center;color:var(--muted);font-size:.86rem;padding:8px var(--pad) 64px}
+
+.hotel-wrap{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.hotel-main{border-radius:16px;overflow:hidden;position:relative;height:240px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-sub{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hotel-card{border-radius:16px;overflow:hidden;position:relative;height:165px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-main img,.hotel-card img,.meal-ph img,.gal-slide img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.hotel-main:hover img,.hotel-card:hover img{transform:scale(1.04)}
+.itag{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.95);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--teal-d);z-index:2}
+.perks{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.perk{background:#fff;border:1.5px solid rgba(4,150,165,.22);border-radius:100px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--teal-d)}
+.meal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.meal-ph{border-radius:12px;overflow:hidden;aspect-ratio:1;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.meal-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:16px 10px 8px;color:#fff;font-size:12px;font-weight:600;z-index:2}
+.meal-badges{display:flex;gap:8px;margin-top:10px}
+.mbg{flex:1;background:#052a30;border-radius:12px;padding:14px;text-align:center}
+.mbg-n{font-weight:800;font-size:34px;color:var(--green);line-height:1}
+.mbg h3{font-size:12px;font-weight:700;color:#fff;margin-top:4px;font-family:var(--f-body)}
+.gal-outer{position:relative;display:flex;align-items:center;gap:8px}
+.gal-track{display:flex;overflow-x:auto;gap:10px;padding:6px 0;flex:1;scrollbar-width:none;scroll-behavior:smooth}
+.gal-track::-webkit-scrollbar{display:none}
+.gal-slide{flex:0 0 calc(80% - 8px);aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.gal-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:22px 14px 12px;color:#fff;font-weight:600;font-size:13px;z-index:2}
+.gal-arrow{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(4,150,165,.1);border:1.5px solid rgba(4,150,165,.3);color:var(--teal-d);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gal-dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+.gal-dots b{width:7px;height:7px;border-radius:50%;background:rgba(4,150,165,.25);cursor:pointer;display:block}
+.gal-dots b.on{background:var(--teal)}
+.ghint{text-align:center;color:var(--muted);font-size:11px;margin-top:10px}
+.lb{position:fixed;inset:0;background:rgba(3,20,23,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px}
+.lb-x{position:absolute;top:16px;right:22px;color:#fff;font-size:34px;cursor:pointer;line-height:1;z-index:3}
+figure.ph{cursor:pointer}
+.ptbl{border-radius:16px;overflow:hidden;border:1px solid rgba(4,150,165,.16);background:#fff}
+.ptbl-head{display:flex;justify-content:space-between;background:var(--teal-d);color:#fff;padding:15px 20px;font-weight:700;font-size:13.5px}
+.ptbl-row{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-top:1px solid rgba(4,150,165,.1)}
+.ptbl-row .cat{font-weight:600;color:var(--dark);font-size:15px;display:flex;align-items:center;gap:9px}
+.ptbl-row .amt{font-weight:800;color:var(--orange);font-size:18px}
+.paypol{margin-top:16px;background:#fff;border-radius:16px;border:1px solid rgba(4,150,165,.16);padding:18px 20px}
+.paypol-h{font-weight:700;color:var(--dark);font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.paypol-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ppc{border-radius:12px;padding:14px;background:var(--off)}
+.ppc.a{border-left:3px solid var(--teal)}
+.ppc.b{border-left:3px solid var(--orange)}
+.ppc-lbl{font-size:11px;color:var(--muted);margin-bottom:4px;font-weight:600}
+.ppc-pct{font-size:28px;font-weight:800;line-height:1}
+.ppc.a .ppc-pct{color:var(--orange)}
+.ppc.b .ppc-pct{color:var(--teal)}
+.ppc-sub{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.hotel-name{font-weight:700;color:var(--dark);font-size:1.05rem;margin:2px 0 12px;display:flex;align-items:center;gap:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.lb-nav.prev{left:14px}.lb-nav.next{right:14px}
+.lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px}
 </style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];}else{el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}}</script></head><body>
 <nav class="nav"><a class="brand" href="../index.html"><img src="../assets/kt-dark.png" alt="Kairali Trails"></a>
   <a class="back" href="../index.html">← All Vietnam packages</a></nav>
@@ -255,11 +307,48 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
 </div></section>
 
 <section class="pricing"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Investment</span><h2>Package price</h2></div>
-  <div class="ptable rv"><div class="prow"><span class="t">Per adult</span><span class="v"><span style="color:#fff">₹</span> 32,000 /-</span></div></div>
-  <p class="pnote">Prices are per adult and exclusive of 5% GST and 2% TCS. Listed rate is for 3★ accommodation.</p>
-  <p class="visa">Flight and visa not included.</p>
+  <div class="sec-head rv"><span class="eyebrow">Pricing</span><h2>Package price</h2></div>
+  <div class="ptbl rv">
+    <div class="ptbl-head"><span>Category</span><span>Price per person</span></div>
+    <div class="ptbl-row"><span class="cat">🧑 Adult</span><span class="amt">₹32,000</span></div><div class="ptbl-row"><span class="cat">🧒 5–11 Years</span><span class="amt">₹27,000</span></div><div class="ptbl-row"><span class="cat">👶 2–4 Years</span><span class="amt">₹23,000</span></div><div class="ptbl-row"><span class="cat">🍼 Infant</span><span class="amt">₹5,000</span></div>
+  </div>
+  <div class="paypol rv">
+    <div class="paypol-h">💳 Payment policy</div>
+    <div class="paypol-cards">
+      <div class="ppc a"><div class="ppc-lbl">At booking</div><div class="ppc-pct">70%</div><div class="ppc-sub">Confirms your spot</div></div>
+      <div class="ppc b"><div class="ppc-lbl">Before travel</div><div class="ppc-pct">30%</div><div class="ppc-sub">Balance 15 days before travel</div></div>
+    </div>
+  </div>
+  <p class="pnote">Prices are per person and exclusive of 5% GST and 2% TCS. Listed rate is for 3★ accommodation.</p>
+  <p class="visa">Vietnam visa — ₹2,500 per person (not included).</p>
 </div></section>
+<section class="stay"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Stay &amp; meals</span><h2>Where you'll stay</h2></div>
+  <div class="hotel-name">🏨 Handpicked 3★ Hotel</div>
+  <div class="hotel-wrap">
+    <div class="hotel-main"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-1.jpg" alt="Handpicked stay" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Handpicked stay</span><small>hotel-1.jpg</small></div><div class="itag">🏨 Handpicked stay</div></div>
+    <div class="hotel-sub">
+      <div class="hotel-card"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-2.jpg" alt="Comfort room" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Comfort room</span><small>hotel-2.jpg</small></div><div class="itag">🛏️ Comfort room</div></div>
+      <div class="hotel-card"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/hotel-3.jpg" alt="Scenic views" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Scenic views</span><small>hotel-3.jpg</small></div><div class="itag">🌄 Scenic views</div></div>
+    </div>
+  </div>
+  <div class="perks">
+    <div class="perk">✅ Double sharing</div>
+    <div class="perk">✅ 4 Nights</div>
+    <div class="perk">✅ Handpicked 3★ stays</div>
+    <div class="perk">🍳 Daily breakfast</div>
+  </div>
+  <div class="meal-row">
+    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-1.jpg" alt="Breakfast spread" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Breakfast spread</span><small>meal-1.jpg</small></div><div class="meal-lbl">Breakfast spread</div></div>
+    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-2.jpg" alt="Local flavours" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Local flavours</span><small>meal-2.jpg</small></div><div class="meal-lbl">Local flavours</div></div>
+    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/phu-quoc-escape/meal-3.jpg" alt="Fresh &amp; hot" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Fresh &amp; hot</span><small>meal-3.jpg</small></div><div class="meal-lbl">Fresh &amp; hot</div></div>
+  </div>
+  <div class="meal-badges">
+    <div class="mbg"><div class="mbg-n">4</div><h3>Breakfasts</h3></div>
+    <div class="mbg"><div class="mbg-n">3★</div><h3>Hotels &amp; homestays</h3></div>
+  </div>
+</div></section>
+
 
 
 <section class="book"><div class="wrap">
@@ -279,6 +368,17 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
   <p class="foot-note">To confirm your booking or ask a question, just <b>reply on WhatsApp</b> with your preferred travel dates.</p>
 </div></section>
 
+
+<section class="gallery"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Happy travellers</span><h2>Real people, real memories</h2></div>
+  <div class="gal-outer">
+    <button class="gal-arrow" onclick="galMove(-1)" aria-label="Previous">&#8249;</button>
+    <div class="gal-track" id="galTrack"><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g1.jpg</small></div><div class="gal-cap">Halong Bay</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g2.jpg</small></div><div class="gal-cap">Sapa terraces</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g3.jpg</small></div><div class="gal-cap">Hanoi Old Quarter</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g4.jpg</small></div><div class="gal-cap">Ninh Binh</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g5.jpg</small></div><div class="gal-cap">Ha Giang Loop</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g6.jpg</small></div><div class="gal-cap">Golden Bridge</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g7.jpg</small></div><div class="gal-cap">Hoi An lanterns</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g8.jpg</small></div><div class="gal-cap">Phu Quoc</div></div></div>
+    <button class="gal-arrow" onclick="galMove(1)" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="gal-dots" id="galDots"></div>
+  <div class="ghint">Tap a photo to zoom · swipe or use arrows</div>
+</div></section>
 <footer><a class="brand" href="../index.html"><img src="../assets/kt-white.png" alt="Kairali Trails"></a>
   <div class="tag">Thank you for choosing Kairali Trails</div>
   <a class="mail" href="mailto:Contact@kairalitrails.com">Contact@kairalitrails.com</a>
@@ -293,4 +393,35 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 })();
-</script></body></html>
+</script><div class="lb" id="lb"><span class="lb-x" onclick="lbClose()">&times;</span><button class="lb-nav prev" onclick="lbStep(-1)" aria-label="Previous">&#8249;</button><img id="lbImg" src="" alt=""><button class="lb-nav next" onclick="lbStep(1)" aria-label="Next">&#8250;</button><div class="lb-count" id="lbCount"></div></div>
+<script>
+(function(){
+ var lb=document.getElementById('lb'),lbi=document.getElementById('lbImg'),lbc=document.getElementById('lbCount');
+ var group=[],gi=0;
+ function srcOf(im){return im.currentSrc||im.src;}
+ function show(){lbi.src=srcOf(group[gi]);lbc.textContent=group.length>1?(gi+1)+' / '+group.length:'';}
+ window.lbStep=function(d){if(!group.length)return;gi=(gi+d+group.length)%group.length;show();};
+ window.lbClose=function(){lb.classList.remove('on');};
+ lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
+ var sels='.photos figure.ph, .meal-row .meal-ph, .hotel-wrap .hotel-main, .hotel-wrap .hotel-card, .gal-track .gal-slide';
+ document.querySelectorAll(sels).forEach(function(el){
+  el.style.cursor='pointer';
+  el.addEventListener('click',function(){
+   var im=el.querySelector('img'); if(!im||im.style.display==='none')return;
+   var box=el.closest('.photos, .meal-row, .hotel-wrap, .gal-track')||el;
+   group=Array.prototype.slice.call(box.querySelectorAll('img')).filter(function(x){return x.style.display!=='none';});
+   gi=group.indexOf(im); if(gi<0)gi=0; show(); lb.classList.add('on');
+  });
+ });
+ var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+ lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)lbStep(dx<0?1:-1);x0=null;},{passive:true});
+ document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+ var track=document.getElementById('galTrack');
+ if(track){var dots=document.getElementById('galDots'),s=track.children,idx=0;
+  for(var i=0;i<s.length;i++){(function(i){var b=document.createElement('b');if(!i)b.className='on';b.onclick=function(ev){ev.stopPropagation();go(i)};dots.appendChild(b);})(i);}
+  function go(i){idx=Math.max(0,Math.min(s.length-1,i));s[idx].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});for(var d=0;d<dots.children.length;d++)dots.children[d].className=d===idx?'on':'';}
+  window.galMove=function(d){go(idx+d)};
+ }
+})();
+</script>
+</body></html>

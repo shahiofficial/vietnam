@@ -1,51 +1,54 @@
 KAIRALI TRAILS — Vietnam · Supabase bucket upload guide
-Bucket: vietnam  (public)
-Project: https://btulhnrguotqjkhyeazk.supabase.co
+Bucket: vietnam (public) · https://btulhnrguotqjkhyeazk.supabase.co
 
-Upload each file below into the bucket at the EXACT path shown.
-Create a folder per package (same name as the slug). Until a file
-exists, the page shows a labelled placeholder automatically.
+Upload each file to the EXACT path shown. Create a folder per package
+(named like the slug). 'gallery' is shared across all 12 pages.
+Accepted: jpg, jpeg, png, webp, jfif (auto-tried). Until uploaded,
+a labelled placeholder shows automatically.
 
-Accepted extensions (auto-tried in order): jpg, jpeg, png, webp, jfif
-i.e. if you upload cover.png instead of cover.jpg it still works.
+Per package, the new photos are: hotel-1/2/3.jpg + meal-1/2/3.jpg
+(plus the existing cover.jpg and dN-N.jpg day photos).
 
 (bucket root)/   (1 images)
    hero.jpg
 
-grand-discovery/   (22 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg
+gallery/   (8 images)
+   g1.jpg, g2.jpg, g3.jpg, g4.jpg, g5.jpg, g6.jpg, g7.jpg, g8.jpg
 
-ha-giang-loop/   (19 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg
+grand-discovery/   (28 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-halong-sapa-fansipan/   (19 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg
+ha-giang-loop/   (25 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-hanoi-adventure/   (13 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg
+halong-sapa-fansipan/   (25 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-hanoi-dalat/   (16 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg
+hanoi-adventure/   (19 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-hanoi-danang-7d/   (22 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg
+hanoi-dalat/   (22 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-hanoi-danang-discovery/   (19 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg
+hanoi-danang-7d/   (28 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-highlights-sapa-5d/   (16 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg
+hanoi-danang-discovery/   (25 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-highlights-sapa-7d/   (22 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg
+highlights-sapa-5d/   (22 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-northern-vietnam/   (16 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg
+highlights-sapa-7d/   (28 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, d7-1.jpg, d7-2.jpg, d7-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-phu-quoc-escape/   (16 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg
+northern-vietnam/   (22 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-sapa-danang-6d/   (19 images)
-   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg
+phu-quoc-escape/   (22 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
 
-TOTAL IMAGES: 220
+sapa-danang-6d/   (25 images)
+   cover.jpg, d1-1.jpg, d1-2.jpg, d1-3.jpg, d2-1.jpg, d2-2.jpg, d2-3.jpg, d3-1.jpg, d3-2.jpg, d3-3.jpg, d4-1.jpg, d4-2.jpg, d4-3.jpg, d5-1.jpg, d5-2.jpg, d5-3.jpg, d6-1.jpg, d6-2.jpg, d6-3.jpg, hotel-1.jpg, hotel-2.jpg, hotel-3.jpg, meal-1.jpg, meal-2.jpg, meal-3.jpg
+
+TOTAL IMAGES: 300
