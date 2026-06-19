@@ -1,56 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/hanoi-escape",
-      "destination": "/hanoi-adventure/index.html"
-    },
-    {
-      "source": "/northern-heart",
-      "destination": "/northern-vietnam/index.html"
-    },
-    {
-      "source": "/phu-quoc",
-      "destination": "/phu-quoc-escape/index.html"
-    },
-    {
-      "source": "/highland-bloom",
-      "destination": "/hanoi-dalat/index.html"
-    },
-    {
-      "source": "/northern-heights",
-      "destination": "/highlights-sapa-5d/index.html"
-    },
-    {
-      "source": "/mountains-to-sea",
-      "destination": "/sapa-danang-6d/index.html"
-    },
-    {
-      "source": "/ha-giang",
-      "destination": "/ha-giang-loop/index.html"
-    },
-    {
-      "source": "/bay-summit",
-      "destination": "/halong-sapa-fansipan/index.html"
-    },
-    {
-      "source": "/capital-to-coast",
-      "destination": "/hanoi-danang-discovery/index.html"
-    },
-    {
-      "source": "/grand-tour",
-      "destination": "/grand-discovery/index.html"
-    },
-    {
-      "source": "/slow-north",
-      "destination": "/hanoi-danang-7d/index.html"
-    },
-    {
-      "source": "/great-northern-loop",
-      "destination": "/highlights-sapa-7d/index.html"
-    }
-  ],
   "redirects": [
     {
       "source": "/hanoi-adventure",
