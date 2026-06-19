@@ -1,0 +1,176 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/hanoi-escape",
+      "destination": "/hanoi-adventure/index.html"
+    },
+    {
+      "source": "/northern-heart",
+      "destination": "/northern-vietnam/index.html"
+    },
+    {
+      "source": "/phu-quoc",
+      "destination": "/phu-quoc-escape/index.html"
+    },
+    {
+      "source": "/highland-bloom",
+      "destination": "/hanoi-dalat/index.html"
+    },
+    {
+      "source": "/northern-heights",
+      "destination": "/highlights-sapa-5d/index.html"
+    },
+    {
+      "source": "/mountains-to-sea",
+      "destination": "/sapa-danang-6d/index.html"
+    },
+    {
+      "source": "/ha-giang",
+      "destination": "/ha-giang-loop/index.html"
+    },
+    {
+      "source": "/bay-summit",
+      "destination": "/halong-sapa-fansipan/index.html"
+    },
+    {
+      "source": "/capital-to-coast",
+      "destination": "/hanoi-danang-discovery/index.html"
+    },
+    {
+      "source": "/grand-tour",
+      "destination": "/grand-discovery/index.html"
+    },
+    {
+      "source": "/slow-north",
+      "destination": "/hanoi-danang-7d/index.html"
+    },
+    {
+      "source": "/great-northern-loop",
+      "destination": "/highlights-sapa-7d/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/hanoi-adventure",
+      "destination": "/hanoi-escape",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-adventure/index.html",
+      "destination": "/hanoi-escape",
+      "permanent": true
+    },
+    {
+      "source": "/northern-vietnam",
+      "destination": "/northern-heart",
+      "permanent": true
+    },
+    {
+      "source": "/northern-vietnam/index.html",
+      "destination": "/northern-heart",
+      "permanent": true
+    },
+    {
+      "source": "/phu-quoc-escape",
+      "destination": "/phu-quoc",
+      "permanent": true
+    },
+    {
+      "source": "/phu-quoc-escape/index.html",
+      "destination": "/phu-quoc",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-dalat",
+      "destination": "/highland-bloom",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-dalat/index.html",
+      "destination": "/highland-bloom",
+      "permanent": true
+    },
+    {
+      "source": "/highlights-sapa-5d",
+      "destination": "/northern-heights",
+      "permanent": true
+    },
+    {
+      "source": "/highlights-sapa-5d/index.html",
+      "destination": "/northern-heights",
+      "permanent": true
+    },
+    {
+      "source": "/sapa-danang-6d",
+      "destination": "/mountains-to-sea",
+      "permanent": true
+    },
+    {
+      "source": "/sapa-danang-6d/index.html",
+      "destination": "/mountains-to-sea",
+      "permanent": true
+    },
+    {
+      "source": "/ha-giang-loop",
+      "destination": "/ha-giang",
+      "permanent": true
+    },
+    {
+      "source": "/ha-giang-loop/index.html",
+      "destination": "/ha-giang",
+      "permanent": true
+    },
+    {
+      "source": "/halong-sapa-fansipan",
+      "destination": "/bay-summit",
+      "permanent": true
+    },
+    {
+      "source": "/halong-sapa-fansipan/index.html",
+      "destination": "/bay-summit",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-danang-discovery",
+      "destination": "/capital-to-coast",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-danang-discovery/index.html",
+      "destination": "/capital-to-coast",
+      "permanent": true
+    },
+    {
+      "source": "/grand-discovery",
+      "destination": "/grand-tour",
+      "permanent": true
+    },
+    {
+      "source": "/grand-discovery/index.html",
+      "destination": "/grand-tour",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-danang-7d",
+      "destination": "/slow-north",
+      "permanent": true
+    },
+    {
+      "source": "/hanoi-danang-7d/index.html",
+      "destination": "/slow-north",
+      "permanent": true
+    },
+    {
+      "source": "/highlights-sapa-7d",
+      "destination": "/great-northern-loop",
+      "permanent": true
+    },
+    {
+      "source": "/highlights-sapa-7d/index.html",
+      "destination": "/great-northern-loop",
+      "permanent": true
+    }
+  ]
+}
