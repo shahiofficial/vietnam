@@ -506,10 +506,9 @@ function syncDots(city){var tr=document.getElementById('track-'+city);var d=docu
 function buildCarousel(city,tier){var tr=document.getElementById('track-'+city);if(!tr)return;tr.innerHTML='';var urls=[];
  function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(city,urls.length);}
  seq(BASE+'/'+PKG+'/'+city+'-'+tier+'star-',function(u){urls.push(u);add(u);},function(){
-  seq(BASE+'/'+PKG+'/'+city+'-food-',function(u){urls.push(u);add(u);},function(){
    if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+city+'-'+tier+'star-1.jpg</small></div>';tr.appendChild(ph);}
    dots(city,urls.length);
-  });});
+  });
  tr.onscroll=function(){syncDots(city);};}
 function openLB(urls,idx){if(!urls.length)return;LB=urls;LBi=idx;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
 window.closeLB=function(){document.getElementById('hclb').classList.remove('on');};
