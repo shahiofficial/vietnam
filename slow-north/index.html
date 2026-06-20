@@ -278,6 +278,27 @@ figure.ph{cursor:pointer}
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
 .lb-nav.prev{left:14px}.lb-nav.next{right:14px}
 .lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px}
+.tier-toggle{display:flex;gap:6px;margin:4px 0 8px;background:var(--off);padding:5px;border-radius:100px;width:fit-content}
+.tier-btn{border:none;background:transparent;padding:9px 20px;border-radius:100px;font-family:var(--f-body);font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;transition:.2s}
+.tier-btn.on{background:var(--teal);color:#fff;box-shadow:0 3px 10px rgba(4,150,165,.3)}
+.tier-note{font-size:.78rem;color:var(--muted);margin:0 0 16px;font-style:italic}
+.hcity{background:#fff;border:1px solid rgba(4,150,165,.14);border-radius:18px;overflow:hidden;margin-bottom:14px}
+.hcarousel{position:relative}
+.hc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-slide{flex:0 0 100%;scroll-snap-align:start;height:230px;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hc-slide img{width:100%;height:100%;object-fit:cover}
+.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:20px;color:var(--teal-d);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hc-arrow.prev{left:10px}.hc-arrow.next{right:10px}
+.hc-body{padding:16px 18px}
+.hc-name{font-weight:700;font-size:1.1rem;color:var(--dark)}
+.hc-meta{margin-top:5px;color:var(--muted);font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.star-badge{color:#f5a623;letter-spacing:1px;font-size:.95rem}
+.hc-amen{display:flex;flex-wrap:wrap;gap:7px 15px;margin-top:13px}
+.hc-amen span{font-size:.82rem;color:var(--teal-d);font-weight:600}
+.fixed-stays{margin-top:6px}
+.fixed-stays h4{font-size:.82rem;color:var(--muted);font-weight:700;margin-bottom:9px;letter-spacing:.3px;text-transform:uppercase}
+.fixed-chip{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid rgba(4,150,165,.12);border-radius:12px;padding:10px 14px;font-size:.85rem;color:var(--dark);font-weight:600;margin:0 8px 8px 0}
 </style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];}else{el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}}</script></head><body>
 <nav class="nav"><a class="brand" href="../index.html"><img src="../assets/kt-dark.png" alt="Kairali Trails"></a>
   <a class="back" href="../index.html">← All Vietnam packages</a></nav>
@@ -308,7 +329,7 @@ figure.ph{cursor:pointer}
 
 <section class="pricing"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Pricing</span><h2>Package price</h2></div>
-  <div class="ptbl rv"><div class="ptbl-head"><span>Category</span><span>Price per person</span></div><div class="ptbl-row"><span class="cat">🧑 Adult</span><span class="amt">₹43,580</span></div><div class="ptbl-row"><span class="cat">🧒 5–11 Years</span><span class="amt">₹38,580</span></div><div class="ptbl-row"><span class="cat">👶 2–4 Years</span><span class="amt">₹34,580</span></div><div class="ptbl-row"><span class="cat">🍼 Infant</span><span class="amt">Free</span></div></div>
+  <div class="ptbl rv"><div class="ptbl-head"><span>Category</span><span>Price per person</span></div><div class="ptbl-row"><span class="cat">🧑 Adult</span><span class="amt" id="pr-adult">₹43,580</span></div><div class="ptbl-row"><span class="cat">🧒 5–11 Years</span><span class="amt" id="pr-c511">₹38,580</span></div><div class="ptbl-row"><span class="cat">👶 2–4 Years</span><span class="amt" id="pr-c24">₹34,580</span></div><div class="ptbl-row"><span class="cat">🍼 Infant</span><span class="amt">Free</span></div></div>
   <div class="paypol rv">
     <div class="paypol-h">💳 Payment policy</div>
     <div class="paypol-cards">
@@ -321,29 +342,36 @@ figure.ph{cursor:pointer}
 </div></section>
 <section class="stay"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Stay &amp; meals</span><h2>Where you'll stay</h2></div>
-  <div class="hotel-name">🏨 Handpicked 3★ Hotel</div>
-  <div class="hotel-wrap">
-    <div class="hotel-main"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-1.jpg" alt="Handpicked stay" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Handpicked stay</span><small>hotel-1.jpg</small></div><div class="itag">🏨 Handpicked stay</div></div>
-    <div class="hotel-sub">
-      <div class="hotel-card"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-2.jpg" alt="Comfort room" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Comfort room</span><small>hotel-2.jpg</small></div><div class="itag">🛏️ Comfort room</div></div>
-      <div class="hotel-card"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/hotel-3.jpg" alt="Scenic views" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Scenic views</span><small>hotel-3.jpg</small></div><div class="itag">🌄 Scenic views</div></div>
-    </div>
+  <div class="tier-toggle">
+    <button class="tier-btn on" data-tier="3" onclick="setTier('3')">3★</button>
+    <button class="tier-btn" data-tier="4" onclick="setTier('4')">4★</button>
+    <button class="tier-btn" data-tier="5" onclick="setTier('5')">5★</button>
   </div>
-  <div class="perks">
-    <div class="perk">✅ Double sharing</div>
-    <div class="perk">✅ 6 Nights</div>
-    <div class="perk">✅ Handpicked 3★ stays</div>
-    <div class="perk">🍳 Daily breakfast</div>
+  <p class="tier-note">Tap a category to switch hotels and update the package price.</p>
+  <div class="hcity" data-city="hanoi">
+  <div class="hcarousel">
+    <button class="hc-arrow prev" onclick="hcMove('hanoi',-1)">&#8249;</button>
+    <div class="hc-track" id="track-hanoi"><div class="hc-slide lbimg"><img data-city="hanoi" data-idx="1" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-1.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi hotel</span><small>hanoi-3star-1.jpg</small></div></div><div class="hc-slide lbimg"><img data-city="hanoi" data-idx="2" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-2.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi hotel</span><small>hanoi-3star-2.jpg</small></div></div><div class="hc-slide lbimg"><img data-city="hanoi" data-idx="3" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/hanoi-3star-3.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi hotel</span><small>hanoi-3star-3.jpg</small></div></div></div>
+    <button class="hc-arrow next" onclick="hcMove('hanoi',1)">&#8250;</button>
   </div>
-  <div class="meal-row">
-    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-1.jpg" alt="Breakfast spread" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Breakfast spread</span><small>meal-1.jpg</small></div><div class="meal-lbl">Breakfast spread</div></div>
-    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-2.jpg" alt="Local flavours" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Local flavours</span><small>meal-2.jpg</small></div><div class="meal-lbl">Local flavours</div></div>
-    <div class="meal-ph"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hanoi-danang-7d/meal-3.jpg" alt="Fresh &amp; hot" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Fresh &amp; hot</span><small>meal-3.jpg</small></div><div class="meal-lbl">Fresh &amp; hot</div></div>
+  <div class="hc-body">
+    <div class="hc-name" id="name-hanoi">Hanoi 3★ Hotel</div>
+    <div class="hc-meta"><span class="star-badge" id="star-hanoi">★★★</span><span>·</span><span>4 nights in Hanoi</span></div>
+    <div class="hc-amen" id="amen-hanoi"></div>
   </div>
-  <div class="meal-badges">
-    <div class="mbg"><div class="mbg-n">6</div><h3>Breakfasts</h3></div>
-    <div class="mbg"><div class="mbg-n">3★</div><h3>Hotels &amp; homestays</h3></div>
+</div><div class="hcity" data-city="danang">
+  <div class="hcarousel">
+    <button class="hc-arrow prev" onclick="hcMove('danang',-1)">&#8249;</button>
+    <div class="hc-track" id="track-danang"><div class="hc-slide lbimg"><img data-city="danang" data-idx="1" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-1.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Danang hotel</span><small>danang-3star-1.jpg</small></div></div><div class="hc-slide lbimg"><img data-city="danang" data-idx="2" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-2.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Danang hotel</span><small>danang-3star-2.jpg</small></div></div><div class="hc-slide lbimg"><img data-city="danang" data-idx="3" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/slow-north/danang-3star-3.jpg" alt="" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Danang hotel</span><small>danang-3star-3.jpg</small></div></div></div>
+    <button class="hc-arrow next" onclick="hcMove('danang',1)">&#8250;</button>
   </div>
+  <div class="hc-body">
+    <div class="hc-name" id="name-danang">Da Nang 3★ Hotel</div>
+    <div class="hc-meta"><span class="star-badge" id="star-danang">★★★</span><span>·</span><span>2 nights in Da Nang</span></div>
+    <div class="hc-amen" id="amen-danang"></div>
+  </div>
+</div>
+  
 </div></section>
 
 
@@ -400,12 +428,12 @@ figure.ph{cursor:pointer}
  window.lbStep=function(d){if(!group.length)return;gi=(gi+d+group.length)%group.length;show();};
  window.lbClose=function(){lb.classList.remove('on');};
  lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
- var sels='.photos figure.ph, .meal-row .meal-ph, .hotel-wrap .hotel-main, .hotel-wrap .hotel-card, .gal-track .gal-slide';
+ var sels='.photos figure.ph, .meal-row .meal-ph, .hotel-wrap .hotel-main, .hotel-wrap .hotel-card, .gal-track .gal-slide, .hc-track .hc-slide';
  document.querySelectorAll(sels).forEach(function(el){
   el.style.cursor='pointer';
   el.addEventListener('click',function(){
    var im=el.querySelector('img'); if(!im||im.style.display==='none')return;
-   var box=el.closest('.photos, .meal-row, .hotel-wrap, .gal-track')||el;
+   var box=el.closest('.photos, .meal-row, .hc-track, .gal-track')||el;
    group=Array.prototype.slice.call(box.querySelectorAll('img')).filter(function(x){return x.style.display!=='none';});
    gi=group.indexOf(im); if(gi<0)gi=0; show(); lb.classList.add('on');
   });
@@ -421,4 +449,4 @@ figure.ph{cursor:pointer}
  }
 })();
 </script>
-</body></html>
+<script>(function(){var BASE="slow-north",PKG="slow-north";var CITIES=["hanoi", "danang"];var TIERS={"3": {"price": {"adult": 43580, "c511": 38580, "c24": 34580}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"hanoi": "Hanoi 3★ Hotel", "danang": "Da Nang 3★ Hotel"}}, "4": {"price": {"adult": 49580, "c511": 44580, "c24": 40580}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"hanoi": "Hanoi 4★ Hotel", "danang": "Da Nang 4★ Hotel"}}, "5": {"price": {"adult": 57580, "c511": 52580, "c24": 48580}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"hanoi": "Hanoi 5★ Hotel", "danang": "Da Nang 5★ Hotel"}}};var ONREQ=false;function fmt(n){return typeof n==='number'?('₹'+n.toLocaleString('en-IN')):n;}window.setTier=function(t){var d=TIERS[t];var ids=['adult','c511','c24'];ids.forEach(function(k){var el=document.getElementById('pr-'+k);if(el)el.textContent=fmt(d.price[k]);});CITIES.forEach(function(c){var nm=document.getElementById('name-'+c);if(nm)nm.textContent=d.hotels[c];var st=document.getElementById('star-'+c);if(st)st.textContent='★'.repeat(parseInt(t));var am=document.getElementById('amen-'+c);if(am)am.innerHTML=d.amen.map(function(a){return '<span>✓ '+a+'</span>';}).join('');var tr=document.getElementById('track-'+c);if(tr)tr.querySelectorAll('img').forEach(function(im){var idx=im.dataset.idx;var nb=BASE+'/'+PKG+'/'+c+'-'+t+'star-'+idx;im.dataset.base=nb;im.dataset.i='';im.onerror=function(){ktImg(this);};im.style.display='';im.src=nb+'.jpg';var fb=im.nextElementSibling;if(fb)fb.style.display='none';});});document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.toggle('on',b.dataset.tier===t);});};window.hcMove=function(city,dir){var tr=document.getElementById('track-'+city);if(tr)tr.scrollBy({left:dir*tr.clientWidth,behavior:'smooth'});};setTier('3');})();</script></body></html>
