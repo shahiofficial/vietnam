@@ -357,38 +357,26 @@ figure.ph{cursor:pointer}
 </div></section>
 <section class="stay"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Stay &amp; meals</span><h2>Where you'll stay</h2></div>
-  <div class="tier-toggle">
-    <button class="tier-btn on" data-tier="3" onclick="setTier('3')">3★</button>
-    <button class="tier-btn" data-tier="4" onclick="setTier('4')">4★</button>
-    <button class="tier-btn" data-tier="5" onclick="setTier('5')">5★</button>
-  </div>
-  <p class="tier-note">Tap a category to switch hotels and update the package price. Swipe each card for room &amp; food photos.</p>
+  <div class="tier-toggle"><button class="tier-btn on" data-tier="3" onclick="setTier('3')">3★</button><button class="tier-btn" data-tier="4" onclick="setTier('4')">4★</button><button class="tier-btn" data-tier="5" onclick="setTier('5')">5★</button></div>
+  <p class="tier-note">Tap a category to switch hotels and update the package price. Swipe each card for photos.</p>
   <div class="hcity" data-city="hanoi">
-  <div class="hcarousel">
-    <button class="hc-arrow prev" onclick="hcMove('hanoi',-1)">&#8249;</button>
-    <div class="hc-track" id="track-hanoi"></div>
-    <button class="hc-arrow next" onclick="hcMove('hanoi',1)">&#8250;</button>
-  </div>
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('hanoi',-1)">&#8249;</button><div class="hc-track" id="track-hanoi"></div><button class="hc-arrow next" onclick="hcMove('hanoi',1)">&#8250;</button></div>
   <div class="hc-dots" id="dots-hanoi"></div>
-  <div class="hc-body">
-    <div class="hc-name" id="name-hanoi">Hanoi 3★ Hotel</div>
+  <div class="hc-body"><div class="hc-name" id="name-hanoi">Hanoi 3★ Hotel</div>
     <div class="hc-meta"><span class="star-badge" id="star-hanoi">★★★</span><span>·</span><span>1 night in Hanoi</span></div>
-    <div class="hc-amen" id="amen-hanoi"></div>
-  </div>
+    <div class="hc-amen" id="amen-hanoi"></div></div>
 </div><div class="hcity" data-city="dalat">
-  <div class="hcarousel">
-    <button class="hc-arrow prev" onclick="hcMove('dalat',-1)">&#8249;</button>
-    <div class="hc-track" id="track-dalat"></div>
-    <button class="hc-arrow next" onclick="hcMove('dalat',1)">&#8250;</button>
-  </div>
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('dalat',-1)">&#8249;</button><div class="hc-track" id="track-dalat"></div><button class="hc-arrow next" onclick="hcMove('dalat',1)">&#8250;</button></div>
   <div class="hc-dots" id="dots-dalat"></div>
-  <div class="hc-body">
-    <div class="hc-name" id="name-dalat">Da Lat 3★ Hotel</div>
+  <div class="hc-body"><div class="hc-name" id="name-dalat">Da Lat 3★ Hotel</div>
     <div class="hc-meta"><span class="star-badge" id="star-dalat">★★★</span><span>·</span><span>2 nights in Da Lat</span></div>
-    <div class="hc-amen" id="amen-dalat"></div>
-  </div>
+    <div class="hc-amen" id="amen-dalat"></div></div>
+</div><div class="hcity hcity-extra" data-city="cruise">
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('cruise',-1)">&#8249;</button><div class="hc-track" id="track-cruise"></div><button class="hc-arrow next" onclick="hcMove('cruise',1)">&#8250;</button></div>
+  <div class="hc-dots" id="dots-cruise"></div>
+  <div class="hc-body"><div class="hc-name">Halong Bay Cruise</div><div class="hc-meta"><span>🚢 Overnight on board</span></div></div>
 </div>
-  <div class="fixed-stays"><h4>Also included on this journey</h4><span class="fixed-chip">🚢 Halong Bay cruise (private cabin)</span></div>
+  
 </div></section>
 
 
@@ -466,25 +454,25 @@ figure.ph{cursor:pointer}
  }
 })();
 </script>
-<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "hanoi-dalat", "CITIES": ["hanoi", "dalat"], "TIERS": {"3": {"price": {"adult": 32000, "c511": 27000, "c24": 23000}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"hanoi": "Hanoi 3★ Hotel", "dalat": "Da Lat 3★ Hotel"}}, "4": {"price": {"adult": 38000, "c511": 33000, "c24": 29000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"hanoi": "Hanoi 4★ Hotel", "dalat": "Da Lat 4★ Hotel"}}, "5": {"price": {"adult": 46000, "c511": 41000, "c24": 37000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"hanoi": "Hanoi 5★ Hotel", "dalat": "Da Lat 5★ Hotel"}}}, "ONREQ": false};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
+<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "hanoi-dalat", "CITIES": ["hanoi", "dalat"], "ALL": ["hanoi", "dalat", "cruise"], "TIERS": {"3": {"price": {"adult": 32000, "c511": 27000, "c24": 23000}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"hanoi": "Hanoi 3★ Hotel", "dalat": "Da Lat 3★ Hotel"}}, "4": {"price": {"adult": 38000, "c511": 33000, "c24": 29000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"hanoi": "Hanoi 4★ Hotel", "dalat": "Da Lat 4★ Hotel"}}, "5": {"price": {"adult": 46000, "c511": 41000, "c24": 37000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"hanoi": "Hanoi 5★ Hotel", "dalat": "Da Lat 5★ Hotel"}}}};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,ALL=D.ALL,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
 function fmt(n){return typeof n==='number'?('₹'+n.toLocaleString('en-IN')):n;}
-function probe(path,cb){var k=0;(function t(){if(k>=EXT.length){cb(null);return;}var u=path+'.'+EXT[k];var im=new Image();im.onload=function(){cb(u);};im.onerror=function(){k++;t();};im.src=u;})();}
-function seq(prefix,onU,done){var i=1,out=[];(function nx(){if(i>30){done(out);return;}probe(prefix+i,function(u){if(u){out.push(u);onU(u);i++;nx();}else done(out);});})();}
-function dots(city,n){var d=document.getElementById('dots-'+city);if(!d)return;d.innerHTML='';if(n<2)return;for(var j=0;j<n;j++){var x=document.createElement('span');x.className='hc-dot'+(j===0?' on':'');d.appendChild(x);}}
-function syncDots(city){var tr=document.getElementById('track-'+city);var d=document.getElementById('dots-'+city);if(!tr||!d||!d.children.length)return;var idx=Math.round(tr.scrollLeft/tr.clientWidth);[].forEach.call(d.children,function(c,j){c.classList.toggle('on',j===idx);});}
-function buildCarousel(city,tier){var tr=document.getElementById('track-'+city);if(!tr)return;tr.innerHTML='';var urls=[];
- function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(city,urls.length);}
- seq(BASE+'/'+PKG+'/'+city+'-'+tier+'star-',function(u){urls.push(u);add(u);},function(){
-   if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+city+'-'+tier+'star-1.jpg</small></div>';tr.appendChild(ph);}
-   dots(city,urls.length);
-  });
- tr.onscroll=function(){syncDots(city);};}
-function openLB(urls,idx){if(!urls.length)return;LB=urls;LBi=idx;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
+function probe(p,cb){var k=0;(function t(){if(k>=EXT.length){cb(null);return;}var u=p+'.'+EXT[k];var im=new Image();im.onload=function(){cb(u);};im.onerror=function(){k++;t();};im.src=u;})();}
+function seq(pre,onU,done){var i=1,o=[];(function nx(){if(i>30){done(o);return;}probe(pre+i,function(u){if(u){o.push(u);onU(u);i++;nx();}else done(o);});})();}
+function dots(c,n){var d=document.getElementById('dots-'+c);if(!d)return;d.innerHTML='';if(n<2)return;for(var j=0;j<n;j++){var x=document.createElement('span');x.className='hc-dot'+(j===0?' on':'');d.appendChild(x);}}
+function syncDots(c){var tr=document.getElementById('track-'+c),d=document.getElementById('dots-'+c);if(!tr||!d||!d.children.length)return;var idx=Math.round(tr.scrollLeft/tr.clientWidth);[].forEach.call(d.children,function(x,j){x.classList.toggle('on',j===idx);});}
+function buildCarousel(c,t){var tr=document.getElementById('track-'+c);if(!tr)return;tr.innerHTML='';var urls=[];
+ function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(c,urls.length);}
+ seq(BASE+'/'+PKG+'/'+c+'-'+t+'star-',function(u){urls.push(u);add(u);},function(){
+  if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+c+'-'+t+'star-1.jpg</small></div>';tr.appendChild(ph);}
+  dots(c,urls.length);});
+ tr.onscroll=function(){syncDots(c);};}
+function openLB(u,i){if(!u.length)return;LB=u;LBi=i;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
 window.closeLB=function(){document.getElementById('hclb').classList.remove('on');};
 window.lbStep=function(d){if(!LB.length)return;LBi=(LBi+d+LB.length)%LB.length;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;};
-window.hcMove=function(city,dir){var tr=document.getElementById('track-'+city);if(tr)tr.scrollBy({left:dir*tr.clientWidth,behavior:'smooth'});};
+window.hcMove=function(c,dir){var tr=document.getElementById('track-'+c);if(tr)tr.scrollBy({left:dir*tr.clientWidth,behavior:'smooth'});};
 window.setTier=function(t){var d=TIERS[t];['adult','c511','c24'].forEach(function(k){var el=document.getElementById('pr-'+k);if(el)el.textContent=fmt(d.price[k]);});
- CITIES.forEach(function(c){var nm=document.getElementById('name-'+c);if(nm)nm.textContent=d.hotels[c];var st=document.getElementById('star-'+c);if(st)st.textContent='★'.repeat(parseInt(t));var am=document.getElementById('amen-'+c);if(am)am.innerHTML=d.amen.map(function(a){return '<span>✓ '+a+'</span>';}).join('');buildCarousel(c,t);});
+ CITIES.forEach(function(c){var nm=document.getElementById('name-'+c);if(nm)nm.textContent=d.hotels[c];var st=document.getElementById('star-'+c);if(st)st.textContent='★'.repeat(parseInt(t));var am=document.getElementById('amen-'+c);if(am)am.innerHTML=d.amen.map(function(a){return '<span>✓ '+a+'</span>';}).join('');});
+ ALL.forEach(function(c){buildCarousel(c,t);});
  document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.toggle('on',b.dataset.tier===t);});};
 document.addEventListener('keydown',function(e){if(!document.getElementById('hclb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
 setTier('3');})();</script></body></html>
