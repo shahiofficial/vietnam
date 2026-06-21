@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bay &amp; Summit · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Bay &amp; Summit · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
 :root{
   --teal:#0496a5; --teal-d:#037885; --green:#24fbaa; --cyan:#29ffff; --blue:#1e98f7;
   --orange:#f3792a; --yellow:#fefdbb;
@@ -288,7 +288,7 @@ figure.ph{cursor:pointer}
 .hc-track::-webkit-scrollbar{display:none}
 .hc-slide{flex:0 0 100%;scroll-snap-align:start;height:230px;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
 .hc-slide img{width:100%;height:100%;object-fit:cover}
-.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:20px;color:var(--teal-d);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.96);border:1px solid rgba(0,0,0,.06);font-size:22px;line-height:1;color:var(--teal-d);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:6;box-shadow:0 3px 12px rgba(0,0,0,.4);-webkit-tap-highlight-color:transparent}
 .hc-arrow.prev{left:10px}.hc-arrow.next{right:10px}
 .hc-body{padding:16px 18px}
 .hc-name{font-weight:700;font-size:1.1rem;color:var(--dark)}
@@ -327,7 +327,7 @@ figure.ph{cursor:pointer}
 .ov-tx .ov-d{font-size:.67rem;font-weight:800;color:#0496a5;letter-spacing:.5px}
 .ov-tx .ov-t{font-weight:600;font-size:.87rem;line-height:1.3;color:#052a30}
 .day{scroll-margin-top:84px}
-</style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];return;}if(el.dataset.old&&!el.dataset.triedold){el.dataset.triedold='1';el.dataset.i=0;el.dataset.base=el.dataset.old;el.src=el.dataset.old+'.'+ex[0];return;}el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}</script></head><body>
+.lb.solo .lb-nav,.lb.solo .lb-count{display:none}</style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];return;}if(el.dataset.old&&!el.dataset.triedold){el.dataset.triedold='1';el.dataset.i=0;el.dataset.base=el.dataset.old;el.src=el.dataset.old+'.'+ex[0];return;}el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}</script></head><body>
 <nav class="nav"><a class="brand" href="../index.html"><img src="../assets/kt-dark.png" alt="Kairali Trails"></a>
   <a class="back" href="../index.html">← All Vietnam packages</a></nav>
 
@@ -457,7 +457,7 @@ figure.ph{cursor:pointer}
    var im=el.querySelector('img'); if(!im||im.style.display==='none')return;
    var box=el.closest('.photos, .meal-row, .hc-track, .gal-track')||el;
    group=Array.prototype.slice.call(box.querySelectorAll('img')).filter(function(x){return x.style.display!=='none';});
-   gi=group.indexOf(im); if(gi<0)gi=0; show(); lb.classList.add('on');
+   gi=group.indexOf(im); if(gi<0)gi=0; if(box.classList.contains('photos')){group=[im];gi=0;lb.classList.add('solo');}else{lb.classList.remove('solo');} show(); lb.classList.add('on');
   });
  });
  var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
@@ -481,7 +481,7 @@ function buildCarousel(c,t){var tr=document.getElementById('track-'+c);if(!tr)re
  function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(c,urls.length);}
  seq(c+'-'+t+'star-',function(u){urls.push(u);add(u);},function(){
   if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+c+'-'+t+'star-1.jpg</small></div>';tr.appendChild(ph);}
-  dots(c,urls.length);});
+  dots(c,urls.length);var _car=tr.closest('.hcarousel');if(_car){var _ar=_car.querySelectorAll('.hc-arrow');for(var _a=0;_a<_ar.length;_a++){_ar[_a].style.display=urls.length>1?'':'none';}}});
  tr.onscroll=function(){syncDots(c);};}
 function openLB(u,i){if(!u.length)return;LB=u;LBi=i;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
 window.closeLB=function(){document.getElementById('hclb').classList.remove('on');};
@@ -492,4 +492,4 @@ window.setTier=function(t){var d=TIERS[t];['adult','c511','c24'].forEach(functio
  ALL.forEach(function(c){buildCarousel(c,t);});
  document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.toggle('on',b.dataset.tier===t);});};
 document.addEventListener('keydown',function(e){if(!document.getElementById('hclb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
-setTier('3');})();</script></body></html>
+setTier('3');})();</script><script>(function(){window.addEventListener("wheel",function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});window.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&["+","-","=","0","_"].indexOf(e.key)!==-1)e.preventDefault();});["gesturestart","gesturechange","gestureend"].forEach(function(g){document.addEventListener(g,function(e){e.preventDefault();});});})();</script></body></html>
