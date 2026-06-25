@@ -338,7 +338,7 @@ figure.ph{cursor:pointer}
   <div class="mid"><span class="eyebrow">Vietnam · 5 Days / 4 Nights</span>
     <h1>Phu Quoc Island Escape</h1><p class="tagline">Cable Car • Kiss Bridge • Safari • VinWonders • Grand World</p>
     <div class="chips"><span class="chip">Cable Car</span><span class="chip">Kiss Bridge</span><span class="chip">Safari</span><span class="chip">VinWonders</span><span class="chip">Grand World</span></div></div>
-  <div class="bot"><div class="price-tag"><span class="from">From</span><span class="amt"><span class="cur">₹</span>32,000</span><span class="per">per person</span></div>
+  <div class="bot"><div class="price-tag"><span class="amt"><span class="cur">₹</span>32,000</span><span class="per">per person</span></div><div class="hero-flightnote" style="font-size:.72rem;color:#bfeee2;font-weight:400;margin-top:7px;letter-spacing:.2px;flex-basis:100%">Land package — flights not included</div>
     <div class="scroll">Scroll to explore <span class="arr">↓</span></div></div>
 </header>
 
@@ -370,6 +370,7 @@ figure.ph{cursor:pointer}
     </div>
   </div>
   <p class="pnote">Prices are per person and exclusive of 5% GST and 2% TCS. Listed rate is for 3★ accommodation.</p>
+  <p class="visa">✈ International &amp; domestic flights are not included — we can arrange them on request.</p>
   <p class="visa">Vietnam visa — ₹2,500 per person (not included).</p>
 </div></section>
 <section class="stay"><div class="wrap">
@@ -379,7 +380,7 @@ figure.ph{cursor:pointer}
   <div class="hcity" data-city="phuquoc">
   <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('phuquoc',-1)">&#8249;</button><div class="hc-track" id="track-phuquoc"></div><button class="hc-arrow next" onclick="hcMove('phuquoc',1)">&#8250;</button></div>
   <div class="hc-dots" id="dots-phuquoc"></div>
-  <div class="hc-body"><div class="hc-name" id="name-phuquoc">Phu Quoc 3★ Hotel</div>
+  <div class="hc-body"><div class="hc-name" id="name-phuquoc">Bauhiana Hotel</div>
     <div class="hc-meta"><span class="star-badge" id="star-phuquoc">★★★</span><span>·</span><span>4 nights in Phu Quoc</span></div>
     <div class="hc-amen" id="amen-phuquoc"></div></div>
 </div>
@@ -461,7 +462,7 @@ figure.ph{cursor:pointer}
  }
 })();
 </script>
-<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "phu-quoc-escape", "CITIES": ["phuquoc"], "ALL": ["phuquoc"], "TIERS": {"3": {"price": {"adult": 32000, "c511": 27000, "c24": 23000}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"phuquoc": "Phu Quoc 3★ Hotel"}}, "4": {"price": {"adult": 38000, "c511": 33000, "c24": 29000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"phuquoc": "Phu Quoc 4★ Hotel"}}, "5": {"price": {"adult": 46000, "c511": 41000, "c24": 37000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"phuquoc": "Phu Quoc 5★ Hotel"}}}};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,ALL=D.ALL,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
+<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "phu-quoc-escape", "CITIES": ["phuquoc"], "ALL": ["phuquoc"], "TIERS": {"3": {"price": {"adult": 32000, "c511": 27000, "c24": 23000}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"phuquoc": "Bauhiana Hotel"}}, "4": {"price": {"adult": 38000, "c511": 33000, "c24": 29000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"phuquoc": "Ocean Pearl"}}, "5": {"price": {"adult": 46000, "c511": 41000, "c24": 37000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"phuquoc": "Thiên Thanh Hotel"}}}};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,ALL=D.ALL,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
 function fmt(n){return typeof n==='number'?('₹'+n.toLocaleString('en-IN')):n;}
 function probe(rel,cb){var k=0;(function t(){if(k>=EXT.length){cb(null);return;}var u=BASE+'/'+PKG+'/'+rel+'.'+EXT[k];var im=new Image();im.onload=function(){cb(u);};im.onerror=function(){k++;t();};im.src=u;})();}
 function seq(pre,onU,done){var i=1,o=[];(function nx(){if(i>30){done(o);return;}probe(pre+i,function(u){if(u){o.push(u);onU(u);i++;nx();}else done(o);});})();}
