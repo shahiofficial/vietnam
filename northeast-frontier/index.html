@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Northeast Frontier · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
+:root{
+  --teal:#0496a5; --teal-d:#037885; --green:#24fbaa; --cyan:#29ffff; --blue:#1e98f7;
+  --orange:#f3792a; --yellow:#fefdbb;
+  --dark:#052a30; --dark-2:#0a3a42; --off:#f4fcfd; --muted:#5a9aa5;
+  --ink:#0e2e34; --line:#d7eef1; --card:#ffffff;
+  --r-s:8px; --r-m:16px; --r-l:24px;
+  --sh:0 4px 24px rgba(4,150,165,.12); --sh-h:0 14px 40px rgba(4,150,165,.22);
+  --wrap:1200px; --pad:clamp(20px,5vw,80px);
+  --f-display:'Tanker','Poppins',system-ui,sans-serif;
+  --f-serif:'Nyght Serif',Georgia,'Times New Roman',serif;
+  --f-body:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--off);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.16;font-weight:700}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;
+  justify-content:space-between;padding:12px clamp(16px,4vw,40px);
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+  box-shadow:0 2px 18px rgba(4,150,165,.10);transform:translateY(-110%);transition:transform .35s ease}
+.nav.show{transform:translateY(0)}
+.nav .brand img{height:30px;width:auto}
+.nav .back{font-size:.82rem;font-weight:600;color:var(--teal-d);border:1.5px solid var(--line);
+  padding:8px 16px;border-radius:999px;transition:.2s}
+.nav .back:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ---------- cover ---------- */
+.cover{position:relative;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:space-between;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,var(--dark) 0%,var(--teal-d) 68%,var(--teal) 105%)}
+.cover .bg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;z-index:0}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(5,42,48,.55) 0%,rgba(5,42,48,.30) 40%,rgba(5,42,48,.85) 100%)}
+.cover>*{position:relative;z-index:2}
+.cover .top{display:flex;justify-content:space-between;align-items:center;padding:clamp(20px,4vw,38px) var(--pad)}
+.cover .top .brand img{height:38px;width:auto}
+.cover .top .all{font-size:.8rem;font-weight:600;border:1.5px solid rgba(255,255,255,.55);
+  padding:8px 16px;border-radius:999px;transition:.2s}
+.cover .top .all:hover{background:#fff;color:var(--teal-d)}
+.cover .mid{padding:0 var(--pad);max-width:940px}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.cover h1{font-family:var(--f-display);font-size:clamp(2.4rem,6.4vw,4.6rem);font-weight:700;
+  letter-spacing:.5px;text-shadow:0 4px 30px rgba(0,0,0,.35);line-height:1.04}
+.cover .tagline{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.5rem);
+  color:#e7fdf5;margin-top:18px;font-weight:400}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-size:.8rem;font-weight:500;padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(41,255,255,.35);backdrop-filter:blur(4px)}
+.cover .bot{display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;justify-content:space-between;
+  padding:0 var(--pad) clamp(28px,5vw,56px)}
+.price-tag{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-tag .from{font-size:.78rem;color:#bfeee2;font-weight:300}
+.price-tag .amt{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;color:#fff}
+.price-tag .amt .cur{color:var(--green)}
+.price-tag .per{font-size:.82rem;color:#bfeee2}
+.scroll{display:flex;align-items:center;gap:10px;font-size:.74rem;color:#cdf6ea;
+  letter-spacing:.12em;text-transform:uppercase}
+.scroll .arr{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);
+  display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---------- quick facts ---------- */
+.facts{background:var(--dark);color:#fff}
+.facts .wrap{display:flex;flex-wrap:wrap;gap:8px clamp(28px,5vw,64px);padding-top:22px;padding-bottom:22px}
+.fact{display:flex;flex-direction:column;gap:2px;min-width:120px}
+.fact b{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600}
+.fact span{font-size:1.02rem;font-weight:500}
+
+/* ---------- sections ---------- */
+section{padding:clamp(48px,7vw,84px) 0}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head .eyebrow{color:var(--teal);margin:0}
+.sec-head h2{font-family:var(--f-display);font-size:clamp(1.9rem,3.8vw,2.7rem);
+  color:var(--dark);letter-spacing:.3px;font-weight:700}
+
+/* ---------- itinerary ---------- */
+.day{margin-bottom:clamp(30px,4vw,52px);background:var(--card);border-radius:var(--r-l);
+  box-shadow:var(--sh);overflow:hidden;border:1px solid var(--line)}
+.day-band{background:linear-gradient(115deg,var(--teal-d),var(--teal));color:#fff;
+  padding:clamp(18px,3vw,26px) clamp(20px,4vw,34px);position:relative}
+.day-band::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--green),var(--cyan))}
+.day-band .num{font-size:.72rem;letter-spacing:.28em;font-weight:600;color:#bdf6e4}
+.day-band h3{font-size:clamp(1.18rem,2.6vw,1.55rem);margin-top:4px;font-weight:700}
+.day-band .route{font-family:'DM Sans',var(--f-body);font-style:normal;font-size:.9rem;letter-spacing:.2px;color:#e1fdf3;margin-top:6px;font-weight:400}
+.day-body{padding:clamp(20px,4vw,34px)}
+.day-body p{margin:0 0 12px}
+.day-body .lead{font-weight:600;color:var(--teal-d);margin-bottom:8px}
+.day-body ul{margin:0 0 16px;padding:0;list-style:none}
+.day-body li{position:relative;padding-left:22px;margin-bottom:7px}
+.day-body li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 3px rgba(36,251,170,.18)}
+.day-body li.sub{padding-left:40px;color:var(--muted)}
+.day-body li.sub::before{left:22px;background:var(--teal);box-shadow:none;width:5px;height:5px;top:12px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 4px}
+.photos.two{grid-template-columns:repeat(2,1fr)}
+figure.ph{margin:0;border-radius:var(--r-m);overflow:hidden;position:relative;background:#e4f4f6;aspect-ratio:4/3}
+figure.ph img{width:100%;height:100%;object-fit:cover}
+.ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;text-align:center;padding:10px;
+  background:repeating-linear-gradient(45deg,#eaf7f8,#eaf7f8 12px,#e2f3f5 12px,#e2f3f5 24px);border:1.5px dashed #a9d9df}
+.ph-fallback span{font-weight:600;color:var(--teal-d);font-size:.86rem}
+.ph-fallback small{font-size:.66rem;color:var(--muted);font-family:ui-monospace,monospace}
+figcaption{font-family:var(--f-serif);font-style:italic;font-size:.8rem;color:var(--muted);text-align:center;margin-top:6px}
+.figwrap{display:flex;flex-direction:column}
+.meals{display:inline-flex;align-items:center;gap:8px;background:#e9faf3;color:var(--teal-d);font-weight:600;
+  font-size:.84rem;padding:8px 16px;border-radius:999px;margin-top:12px;border:1px solid #c6f0e0}
+.overnight{margin-top:12px;font-family:var(--f-serif);font-style:italic;color:var(--muted);font-size:.95rem}
+
+/* ---------- inc / exc ---------- */
+.ie{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,28px)}
+.ie .box{background:var(--card);border-radius:var(--r-l);box-shadow:var(--sh);border:1px solid var(--line);overflow:hidden}
+.ie .box .hd{padding:16px 24px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.ie .inc .hd{background:linear-gradient(115deg,var(--teal-d),var(--teal))}
+.ie .exc .hd{background:linear-gradient(115deg,#9a4a18,var(--orange))}
+.ie ul{list-style:none;margin:0;padding:20px 24px}
+.ie li{position:relative;padding-left:26px;margin-bottom:10px;font-size:.94rem}
+.ie .inc li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800}
+.ie .exc li::before{content:"✕";position:absolute;left:0;top:0;color:var(--orange);font-weight:800}
+
+/* ---------- pricing ---------- */
+.pricing{background:var(--dark);color:#fff}
+.pricing .sec-head h2{color:#fff}
+.pricing .sec-head .eyebrow{color:var(--green)}
+.ptable{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-l);
+  overflow:hidden;max-width:640px}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 26px;border-bottom:1px solid rgba(255,255,255,.10)}
+.prow:last-child{border-bottom:none}
+.prow .t{font-weight:500}
+.prow .v{font-weight:800;font-size:1.25rem;color:var(--green);white-space:nowrap}
+.pnote{font-size:.82rem;color:#bfeee2;margin-top:14px;font-style:italic}
+.visa{font-size:.86rem;color:#cdeee9;margin-top:8px}
+
+/* ---------- how to book ---------- */
+.book{background:linear-gradient(180deg,#eef9fb,var(--off))}
+.book .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,24px)}
+.bcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:26px 24px;
+  box-shadow:var(--sh);position:relative;overflow:hidden}
+.bcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--teal),var(--cyan),var(--blue))}
+.bcard .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;
+  margin-bottom:14px;background:#e7fbff;border:1px solid #c4f2f7}
+.bcard h4{font-size:1.05rem;color:var(--dark);margin-bottom:6px;font-weight:700}
+.bcard .step{font-family:var(--f-serif);font-style:italic;color:var(--blue);font-size:.82rem;margin-bottom:10px}
+.bcard p{font-size:.92rem;color:var(--ink);margin:0}
+.bcard ul{list-style:none;margin:8px 0 0;padding:0}
+.bcard li{position:relative;padding-left:20px;margin-bottom:6px;font-size:.92rem}
+.bcard li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.book .foot-note{margin-top:26px;font-size:.95rem;color:var(--teal-d);font-weight:500;text-align:center}
+.book .foot-note b{color:var(--dark)}
+
+/* ---------- footer ---------- */
+footer{background:#021c20;color:#cfeef0;text-align:center;padding:46px var(--pad)}
+footer .brand img{height:46px;width:auto;margin:0 auto}
+footer .tag{color:var(--muted);margin-top:12px;font-size:.9rem}
+footer a.mail{color:var(--green);font-weight:500;margin-top:14px;display:inline-block;font-size:.95rem}
+footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scroll .arr{animation:none}}
+
+@media(max-width:820px){ .book .cards{grid-template-columns:1fr} }
+@media(max-width:760px){ .photos{grid-template-columns:1fr 1fr} .ie{grid-template-columns:1fr}
+  .cover .bot{flex-direction:column;align-items:flex-start} }
+@media(max-width:460px){ .photos,.photos.two{grid-template-columns:1fr} }
+
+/* =========== LISTING PAGE =========== */
+.hero{position:relative;color:#fff;overflow:hidden;padding:clamp(92px,15vh,140px) 0 clamp(54px,9vw,92px);
+  background:linear-gradient(135deg,var(--dark) 0%,var(--teal-d) 62%,var(--teal) 112%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.18;
+  background:radial-gradient(circle at 82% 8%,var(--green),transparent 42%),
+             radial-gradient(circle at 6% 92%,var(--blue),transparent 40%),
+             radial-gradient(circle at 60% 60%,var(--cyan),transparent 30%)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(5,42,48,.45) 0%,rgba(5,42,48,.55) 45%,rgba(5,42,48,.82) 100%)}
+.hero::before{z-index:1}
+.hero .wrap{position:relative;z-index:2}
+.hero .brand img{height:48px;width:auto;margin-bottom:30px}
+.hero h1{font-family:var(--f-display);font-size:clamp(2.6rem,7vw,5rem);font-weight:700;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{max-width:580px;color:#e3f7f0;font-weight:300;margin-top:16px;
+  font-family:var(--f-serif);font-style:italic;font-size:clamp(1.05rem,2.1vw,1.35rem)}
+.hero .meta{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero .meta div b{display:block;font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--green)}
+.hero .meta div span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#bfeee2}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+  gap:clamp(20px,3vw,30px);padding-top:clamp(44px,6vw,72px);padding-bottom:20px}
+.card{background:var(--card);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh);
+  border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--sh-h)}
+.card .top{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--teal-d),var(--teal));overflow:hidden}
+.card .top img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .top img{transform:scale(1.06)}
+.card .dur{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:var(--teal-d);
+  font-weight:700;font-size:.74rem;padding:6px 12px;border-radius:999px}
+.card-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;color:#dff;padding:14px;text-align:center;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.06),rgba(255,255,255,.06) 14px,transparent 14px,transparent 28px)}
+.card-ph span{font-weight:700;font-size:.9rem;letter-spacing:.05em}
+.card-ph small{font-size:.66rem;font-family:ui-monospace,monospace;opacity:.8}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:var(--f-display);font-size:1.3rem;color:var(--dark);letter-spacing:.2px;font-weight:700}
+.card .rt{color:var(--muted);font-size:.86rem;margin-top:8px}
+.card .tagl{font-family:'DM Sans',var(--f-body);font-style:normal;color:var(--teal-d);font-size:.85rem;letter-spacing:.2px;margin-top:10px}.hot{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;font-family:var(--f-body);font-weight:600;font-size:.72rem;letter-spacing:.3px;padding:5px 10px;border-radius:999px;box-shadow:0 4px 12px rgba(243,121,42,.45)}.hot2{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;font-family:var(--f-body);font-weight:600;font-size:.74rem;letter-spacing:.3px;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;
+  border-top:1px solid var(--line)}
+.card .pr{display:flex;flex-direction:column}
+.card .pr small{font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.card .pr b{font-size:1.22rem;color:var(--dark);font-weight:800}
+.card .pr b .cur{color:var(--teal)}
+.card .pr.tba b{font-size:1rem;color:var(--orange)}
+.card .view{font-size:.82rem;font-weight:700;color:#fff;background:linear-gradient(115deg,var(--teal-d),var(--teal));
+  padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:.25s;white-space:nowrap}
+.card:hover .view{background:linear-gradient(115deg,var(--teal),var(--green));color:var(--dark)}
+.list-note{text-align:center;color:var(--muted);font-size:.86rem;padding:8px var(--pad) 64px}
+
+.hotel-wrap{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.hotel-main{border-radius:16px;overflow:hidden;position:relative;height:240px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-sub{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hotel-card{border-radius:16px;overflow:hidden;position:relative;height:165px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-main img,.hotel-card img,.meal-ph img,.gal-slide img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.hotel-main:hover img,.hotel-card:hover img{transform:scale(1.04)}
+.itag{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.95);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--teal-d);z-index:2}
+.perks{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.perk{background:#fff;border:1.5px solid rgba(4,150,165,.22);border-radius:100px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--teal-d)}
+.meal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.meal-ph{border-radius:12px;overflow:hidden;aspect-ratio:1;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.meal-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:16px 10px 8px;color:#fff;font-size:12px;font-weight:600;z-index:2}
+.meal-badges{display:flex;gap:8px;margin-top:10px}
+.mbg{flex:1;background:#052a30;border-radius:12px;padding:14px;text-align:center}
+.mbg-n{font-weight:800;font-size:34px;color:var(--green);line-height:1}
+.mbg h3{font-size:12px;font-weight:700;color:#fff;margin-top:4px;font-family:var(--f-body)}
+.gal-outer{position:relative;display:flex;align-items:center;gap:8px}
+.gal-track{display:flex;overflow-x:auto;gap:10px;padding:6px 0;flex:1;scrollbar-width:none;scroll-behavior:smooth}
+.gal-track::-webkit-scrollbar{display:none}
+.gal-slide{flex:0 0 calc(80% - 8px);aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.gal-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:22px 14px 12px;color:#fff;font-weight:600;font-size:13px;z-index:2}
+.gal-arrow{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(4,150,165,.1);border:1.5px solid rgba(4,150,165,.3);color:var(--teal-d);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gal-dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+.gal-dots b{width:7px;height:7px;border-radius:50%;background:rgba(4,150,165,.25);cursor:pointer;display:block}
+.gal-dots b.on{background:var(--teal)}
+.ghint{text-align:center;color:var(--muted);font-size:11px;margin-top:10px}
+.lb{position:fixed;inset:0;background:rgba(3,20,23,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px}
+.lb-x{position:absolute;top:16px;right:22px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+figure.ph{cursor:pointer}
+
+.ptbl{border-radius:16px;overflow:hidden;border:1px solid rgba(4,150,165,.16);background:#fff}
+.ptbl-head{display:flex;justify-content:space-between;background:var(--teal-d);color:#fff;padding:15px 20px;font-weight:700;font-size:13.5px}
+.ptbl-row{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-top:1px solid rgba(4,150,165,.1)}
+.ptbl-row .cat{font-weight:600;color:var(--dark);font-size:15px;display:flex;align-items:center;gap:9px}
+.ptbl-row .amt{font-weight:800;color:var(--orange);font-size:18px}
+.paypol{margin-top:16px;background:#fff;border-radius:16px;border:1px solid rgba(4,150,165,.16);padding:18px 20px}
+.paypol-h{font-weight:700;color:var(--dark);font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.paypol-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ppc{border-radius:12px;padding:14px;background:var(--off)}
+.ppc.a{border-left:3px solid var(--teal)}
+.ppc.b{border-left:3px solid var(--orange)}
+.ppc-lbl{font-size:11px;color:var(--muted);margin-bottom:4px;font-weight:600}
+.ppc-pct{font-size:28px;font-weight:800;line-height:1}
+.ppc.a .ppc-pct{color:var(--orange)}
+.ppc.b .ppc-pct{color:var(--teal)}
+.ppc-sub{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.hotel-name{font-weight:700;color:var(--dark);font-size:1.05rem;margin:2px 0 12px;display:flex;align-items:center;gap:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.lb-nav.prev{left:14px}.lb-nav.next{right:14px}
+.lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px}
+.tier-toggle{display:flex;gap:6px;margin:4px 0 8px;background:var(--off);padding:5px;border-radius:100px;width:fit-content}
+.tier-btn{border:none;background:transparent;padding:9px 20px;border-radius:100px;font-family:var(--f-body);font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;transition:.2s}
+.tier-btn.on{background:var(--teal);color:#fff;box-shadow:0 3px 10px rgba(4,150,165,.3)}
+.tier-note{font-size:.78rem;color:var(--muted);margin:0 0 16px;font-style:italic}
+.hcity{background:#fff;border:1px solid rgba(4,150,165,.14);border-radius:18px;overflow:hidden;margin-bottom:14px}
+.hcarousel{position:relative}
+.hc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-slide{flex:0 0 100%;scroll-snap-align:start;height:230px;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hc-slide img{width:100%;height:100%;object-fit:cover}
+.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.96);border:1px solid rgba(0,0,0,.06);font-size:22px;line-height:1;color:var(--teal-d);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:6;box-shadow:0 3px 12px rgba(0,0,0,.4);-webkit-tap-highlight-color:transparent}
+.hc-arrow.prev{left:10px}.hc-arrow.next{right:10px}
+.hc-body{padding:16px 18px}
+.hc-name{font-weight:700;font-size:1.1rem;color:var(--dark)}
+.hc-meta{margin-top:5px;color:var(--muted);font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.star-badge{color:#f5a623;letter-spacing:1px;font-size:.95rem}
+.hc-amen{display:flex;flex-wrap:wrap;gap:7px 15px;margin-top:13px}
+.hc-amen span{font-size:.82rem;color:var(--teal-d);font-weight:600}
+.fixed-stays{margin-top:6px}
+.fixed-stays h4{font-size:.82rem;color:var(--muted);font-weight:700;margin-bottom:9px;letter-spacing:.3px;text-transform:uppercase}
+.fixed-chip{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid rgba(4,150,165,.12);border-radius:12px;padding:10px 14px;font-size:.85rem;color:var(--dark);font-weight:600;margin:0 8px 8px 0}
+.hc-dots{display:flex;gap:6px;justify-content:center;padding:11px 0 3px;flex-wrap:wrap}
+.hc-dot{width:7px;height:7px;border-radius:50%;background:rgba(4,150,165,.25);transition:.2s}
+.hc-dot.on{background:var(--teal);transform:scale(1.25)}
+.hc-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff;font-weight:700;text-align:center;gap:5px;font-size:1rem}
+.hc-ph small{opacity:.85;font-weight:500;font-size:.72rem;font-family:monospace}
+.hclb{position:fixed;inset:0;background:rgba(5,42,48,.95);z-index:99999;display:none;align-items:center;justify-content:center}
+.hclb.on{display:flex}
+.hclb img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 12px 50px rgba(0,0,0,.5)}
+.hclb .x{position:absolute;top:16px;right:22px;color:#fff;font-size:34px;cursor:pointer;background:none;border:none;line-height:1}
+.hclb .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.16);border:none;color:#fff;font-size:28px;width:48px;height:48px;border-radius:50%;cursor:pointer}
+.hclb .nav.p{left:16px}.hclb .nav.n{right:16px}
+.hclb .cnt{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-size:.85rem;opacity:.85}
+
+.trip-ov{background:#fff;border:1px solid rgba(4,150,165,.15);border-radius:16px;padding:16px 18px;margin:0 0 8px}
+.ov-route{display:flex;align-items:flex-start;flex-wrap:wrap;background:#f4fcfd;border-radius:12px;padding:14px 8px;margin-bottom:14px}
+.ov-stop{display:flex;flex-direction:column;align-items:center;min-width:58px;flex:0 0 auto}
+.ov-dot{width:14px;height:14px;border-radius:50%;background:#0496a5;border:3px solid #cdeef0}
+.ov-name{font-weight:700;font-size:.74rem;margin-top:6px;text-align:center;color:#052a30;line-height:1.2}
+.ov-line{flex:1;height:3px;background:linear-gradient(90deg,#0496a5,#24fbaa);margin-top:6px;min-width:12px;border-radius:2px}
+.ov-day{display:flex;gap:11px;position:relative;text-decoration:none;color:inherit}
+.ov-day:not(:last-child)::before{content:"";position:absolute;left:15px;top:34px;bottom:-3px;width:2px;background:#d6edef}
+.ov-num{flex:0 0 32px;height:32px;border-radius:50%;background:#0496a5;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:1;font-size:.9rem}
+.ov-card{flex:1;background:#f4fcfd;border-radius:11px;padding:9px 13px;margin-bottom:9px;display:flex;align-items:center;gap:11px;transition:.15s}
+.ov-day:hover .ov-card{background:#e3f5f7}
+.ov-ico{font-size:1.2rem;flex:0 0 auto}
+.ov-tx .ov-d{font-size:.67rem;font-weight:800;color:#0496a5;letter-spacing:.5px}
+.ov-tx .ov-t{font-weight:600;font-size:.87rem;line-height:1.3;color:#052a30}
+.day{scroll-margin-top:84px}
+.lb.solo .lb-nav,.lb.solo .lb-count{display:none}</style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];}else{el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}}</script></head><body>
+<nav class="nav"><a class="brand" href="../index.html"><img src="../assets/kt-dark.png" alt="Kairali Trails"></a>
+  <a class="back" href="../index.html">← All Vietnam packages</a></nav>
+
+<header class="cover">
+  <img class="bg" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/cover" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/cover.jpg" alt="" onerror="ktImg(this)">
+  <div class="top"><a class="brand" href="../index.html"><img src="../assets/kt-white.png" alt="Kairali Trails"></a>
+    <a class="all" href="../index.html">All packages</a></div>
+  <div class="mid"><span class="eyebrow">Vietnam · 10 Days / 9 Nights</span>
+    <h1>Northeast Frontier</h1><p class="tagline">Ha Giang Loop • Ma Pi Leng • Nho Que River • Ban Gioc • Cao Bang</p>
+    <div class="chips"><span class="chip">Ha Giang</span><span class="chip">Ma Pi Leng</span><span class="chip">Nho Que River</span><span class="chip">Ban Gioc</span><span class="chip">Cao Bang</span></div></div>
+  <div class="bot"><div class="price-tag"><span class="amt"><span class="cur">₹</span>94,999</span><span class="per">per person</span></div><div class="hero-flightnote" style="font-size:.72rem;color:#bfeee2;font-weight:400;margin-top:7px;letter-spacing:.2px;flex-basis:100%">International flights not included</div>
+    <div class="scroll">Scroll to explore <span class="arr">↓</span></div></div>
+</header>
+
+<div class="facts"><div class="wrap"><div class="fact"><b>Duration</b><span>10 Days / 9 Nights</span></div><div class="fact"><b>Route</b><span>Hanoi · Sapa · Fansipan · Ha Giang</span></div><div class="fact"><b>Style</b><span>Soft adventure · trekking · motorbike</span></div><div class="fact"><b>Stay</b><span>Hotel · homestays · semi-sleeper train &amp; bus</span></div></div></div>
+
+<section class="itinerary"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Day by day</span><h2>Your itinerary</h2></div>
+  <div class="trip-ov rv"><div class="ov-route"><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Hanoi</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Ha Giang</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Dong Van</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Cao Bang</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Ban Gioc</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Hanoi</div></div></div><a class="ov-day" href="#day-1"><div class="ov-num">1</div><div class="ov-card"><span class="ov-ico">🛬</span><div class="ov-tx"><div class="ov-d">DAY 1</div><div class="ov-t">Arrive Hanoi</div></div></div></a><a class="ov-day" href="#day-2"><div class="ov-num">2</div><div class="ov-card"><span class="ov-ico">🚌</span><div class="ov-tx"><div class="ov-d">DAY 2</div><div class="ov-t">Hanoi → Ha Giang</div></div></div></a><a class="ov-day" href="#day-3"><div class="ov-num">3</div><div class="ov-card"><span class="ov-ico">🏍️</span><div class="ov-tx"><div class="ov-d">DAY 3</div><div class="ov-t">Ha Giang → Quan Ba → Yen Minh</div></div></div></a><a class="ov-day" href="#day-4"><div class="ov-num">4</div><div class="ov-card"><span class="ov-ico">🚩</span><div class="ov-tx"><div class="ov-d">DAY 4</div><div class="ov-t">Yen Minh → Lung Cu → Dong Van</div></div></div></a><a class="ov-day" href="#day-5"><div class="ov-num">5</div><div class="ov-card"><span class="ov-ico">🛶</span><div class="ov-tx"><div class="ov-d">DAY 5</div><div class="ov-t">Ma Pi Leng → Nho Que River → Du Gia</div></div></div></a><a class="ov-day" href="#day-6"><div class="ov-num">6</div><div class="ov-card"><span class="ov-ico">💧</span><div class="ov-tx"><div class="ov-d">DAY 6</div><div class="ov-t">Du Gia → Lung Tam → Ha Giang</div></div></div></a><a class="ov-day" href="#day-7"><div class="ov-num">7</div><div class="ov-card"><span class="ov-ico">🏍️</span><div class="ov-tx"><div class="ov-d">DAY 7</div><div class="ov-t">Ha Giang → Me Pia 14 Corners → Pac Bo</div></div></div></a><a class="ov-day" href="#day-8"><div class="ov-num">8</div><div class="ov-card"><span class="ov-ico">💦</span><div class="ov-tx"><div class="ov-d">DAY 8</div><div class="ov-t">Pac Bo → Trung Khanh → Ban Gioc Waterfall</div></div></div></a><a class="ov-day" href="#day-9"><div class="ov-num">9</div><div class="ov-card"><span class="ov-ico">🕳️</span><div class="ov-tx"><div class="ov-d">DAY 9</div><div class="ov-t">Ban Gioc → Nguom Ngao Cave → Cao Bang → Hanoi</div></div></div></a><a class="ov-day" href="#day-10"><div class="ov-num">10</div><div class="ov-card"><span class="ov-ico">🛫</span><div class="ov-tx"><div class="ov-d">DAY 10</div><div class="ov-t">Hanoi Departure</div></div></div></a></div><article class="day rv" id="day-1"><div class="day-band"><div class="num">DAY 01</div><h3>Arrive Hanoi</h3><div class="route">Hanoi</div></div><div class="day-body"><p>Arrive at Hanoi airport and transfer to your hotel. Free and easy to discover the Old Quarter and Hoan Kiem Lake.</p><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-1.jpg" alt="Hanoi Old Quarter" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi Old Quarter</span><small>northeast-frontier/d1-1.jpg</small></div></figure><figcaption>Hanoi Old Quarter</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-2.jpg" alt="Hoan Kiem Lake" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hoan Kiem Lake</span><small>northeast-frontier/d1-2.jpg</small></div></figure><figcaption>Hoan Kiem Lake</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d1-3.jpg" alt="Hanoi street life" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi street life</span><small>northeast-frontier/d1-3.jpg</small></div></figure><figcaption>Hanoi street life</figcaption></div></div><div class="meals">🍽&nbsp; Meals: None</div><div class="overnight">Overnight at hotel in Hanoi.</div></div></article><article class="day rv" id="day-2"><div class="day-band"><div class="num">DAY 02</div><h3>Hanoi → Ha Giang</h3><div class="route">Hanoi → Ha Giang</div></div><div class="day-body"><p>Breakfast and check out. Around 9:00 AM board the bus from Hanoi to Ha Giang, arriving Ha Giang city around 4:00 PM. Check in to your homestay and explore Ha Giang's night life.</p><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-1.jpg" alt="Limousine bus" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Limousine bus</span><small>northeast-frontier/d2-1.jpg</small></div></figure><figcaption>Limousine bus</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-2.jpg" alt="Road to Ha Giang" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Road to Ha Giang</span><small>northeast-frontier/d2-2.jpg</small></div></figure><figcaption>Road to Ha Giang</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d2-3.jpg" alt="Ha Giang homestay" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ha Giang homestay</span><small>northeast-frontier/d2-3.jpg</small></div></figure><figcaption>Ha Giang homestay</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast</div><div class="overnight">Overnight at homestay in Ha Giang.</div></div></article><article class="day rv" id="day-3"><div class="day-band"><div class="num">DAY 03</div><h3>Ha Giang → Quan Ba → Yen Minh</h3><div class="route">Quan Ba / Yen Minh</div></div><div class="day-body"><p>After breakfast, begin the legendary Ha Giang Loop.</p><p class="lead">Today's highlights:</p><ul><li>KM 0 Ha Giang marker</li><li>Bac Sum Pass & Quan Ba Heaven Gate</li><li>Quan Ba Twin Mountains & Tam Son Town</li><li>Lung Khuy Cave, lunch in Tam Son</li><li>Can Ty Pass, lonely trees & Van Chai cliff</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-1.jpg" alt="Quan Ba Heaven Gate" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Quan Ba Heaven Gate</span><small>northeast-frontier/d3-1.jpg</small></div></figure><figcaption>Quan Ba Heaven Gate</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-2.jpg" alt="Lung Khuy Cave" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Lung Khuy Cave</span><small>northeast-frontier/d3-2.jpg</small></div></figure><figcaption>Lung Khuy Cave</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d3-3.jpg" alt="Yen Minh valley" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Yen Minh valley</span><small>northeast-frontier/d3-3.jpg</small></div></figure><figcaption>Yen Minh valley</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at homestay in Yen Minh.</div></div></article><article class="day rv" id="day-4"><div class="day-band"><div class="num">DAY 04</div><h3>Yen Minh → Lung Cu → Dong Van</h3><div class="route">Lung Cu / Dong Van</div></div><div class="day-body"><p>Depart for Tham Ma Pass, Pho Cao village and Sung La valley.</p><p class="lead">Today's highlights:</p><ul><li>Tham Ma Pass & Sung La valley</li><li>Vuong family mansion (King of the H'mong)</li><li>Lung Cu Flag Pole – the northernmost point of Vietnam</li><li>Lo Lo Chai cultural village</li><li>Dong Van old town & night market</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-1.jpg" alt="Lung Cu Flag Pole" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Lung Cu Flag Pole</span><small>northeast-frontier/d4-1.jpg</small></div></figure><figcaption>Lung Cu Flag Pole</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-2.jpg" alt="Vuong family mansion" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Vuong family mansion</span><small>northeast-frontier/d4-2.jpg</small></div></figure><figcaption>Vuong family mansion</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d4-3.jpg" alt="Dong Van old town" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Dong Van old town</span><small>northeast-frontier/d4-3.jpg</small></div></figure><figcaption>Dong Van old town</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at hotel/homestay in Dong Van.</div></div></article><article class="day rv" id="day-5"><div class="day-band"><div class="num">DAY 05</div><h3>Ma Pi Leng → Nho Que River → Du Gia</h3><div class="route">Meo Vac / Du Gia</div></div><div class="day-body"><p>Ride the legendary Happiness Road and the majestic Ma Pi Leng Pass high above the Nho Que River.</p><p class="lead">Today's highlights:</p><ul><li>Ma Pi Leng Pass & Sky Path panorama</li><li>Boat on the Nho Que River through Tu San Canyon – the deepest in Southeast Asia</li><li>Lunch at Meo Vac, scenic ride to Du Gia via Mau Due and Lung Ho</li><li>Tay homestay dinner with corn wine ('happy water')</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-1.jpg" alt="Ma Pi Leng Pass" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ma Pi Leng Pass</span><small>northeast-frontier/d5-1.jpg</small></div></figure><figcaption>Ma Pi Leng Pass</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-2.jpg" alt="Nho Que River boat" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Nho Que River boat</span><small>northeast-frontier/d5-2.jpg</small></div></figure><figcaption>Nho Que River boat</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d5-3.jpg" alt="Tu San Canyon" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Tu San Canyon</span><small>northeast-frontier/d5-3.jpg</small></div></figure><figcaption>Tu San Canyon</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at homestay in Du Gia.</div></div></article><article class="day rv" id="day-6"><div class="day-band"><div class="num">DAY 06</div><h3>Du Gia → Lung Tam → Ha Giang</h3><div class="route">Quan Ba / Ha Giang</div></div><div class="day-body"><p>Walk around the village and swim at Du Gia Waterfall, then ride back toward Ha Giang city.</p><p class="lead">On the way:</p><ul><li>Du Gia Waterfall</li><li>Duong Thuong valley</li><li>Lung Tam weaving village</li><li>Lunch at Tam Son – Quan Ba, arrive Ha Giang ~4 PM</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-1.jpg" alt="Du Gia Waterfall" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Du Gia Waterfall</span><small>northeast-frontier/d6-1.jpg</small></div></figure><figcaption>Du Gia Waterfall</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-2.jpg" alt="Lung Tam weaving" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Lung Tam weaving</span><small>northeast-frontier/d6-2.jpg</small></div></figure><figcaption>Lung Tam weaving</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d6-3.jpg" alt="Ha Giang valley" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ha Giang valley</span><small>northeast-frontier/d6-3.jpg</small></div></figure><figcaption>Ha Giang valley</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at homestay in Ha Giang.</div></div></article><article class="day rv" id="day-7"><div class="day-band"><div class="num">DAY 07</div><h3>Ha Giang → Me Pia 14 Corners → Pac Bo</h3><div class="route">Bao Lac / Cao Bang</div></div><div class="day-body"><p>Breakfast, then depart for Cao Bang province via Xuan Truong and Bao Lam.</p><p class="lead">Today's highlights:</p><ul><li>Me Pia Pass & its famous 14 Corners (a short 1 km climb for the best view)</li><li>Lenin Stream</li><li>Pac Bo Cave</li><li>Tay cultural village stay in Pac Bo (separate bungalows)</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-1.jpg" alt="14 Corners Pass" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>14 Corners Pass</span><small>northeast-frontier/d7-1.jpg</small></div></figure><figcaption>14 Corners Pass</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-2.jpg" alt="Lenin Stream" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Lenin Stream</span><small>northeast-frontier/d7-2.jpg</small></div></figure><figcaption>Lenin Stream</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d7-3.jpg" alt="Pac Bo" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Pac Bo</span><small>northeast-frontier/d7-3.jpg</small></div></figure><figcaption>Pac Bo</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at Tay homestay in Pac Bo.</div></div></article><article class="day rv" id="day-8"><div class="day-band"><div class="num">DAY 08</div><h3>Pac Bo → Trung Khanh → Ban Gioc Waterfall</h3><div class="route">Tra Linh / Ban Gioc</div></div><div class="day-body"><p>Ride to Ban Gioc Waterfall via Tra Linh and Trung Khanh.</p><p class="lead">Today's highlights:</p><ul><li>Lunch near Ban Gioc</li><li>Ban Gioc Waterfall – the largest waterfall on the Vietnam–China border</li><li>Bamboo-raft boat to the foot of the falls</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-1.jpg" alt="Ban Gioc Waterfall" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ban Gioc Waterfall</span><small>northeast-frontier/d8-1.jpg</small></div></figure><figcaption>Ban Gioc Waterfall</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-2.jpg" alt="Ban Gioc raft boat" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ban Gioc raft boat</span><small>northeast-frontier/d8-2.jpg</small></div></figure><figcaption>Ban Gioc raft boat</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d8-3.jpg" alt="Trung Khanh countryside" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Trung Khanh countryside</span><small>northeast-frontier/d8-3.jpg</small></div></figure><figcaption>Trung Khanh countryside</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight at homestay near Ban Gioc.</div></div></article><article class="day rv" id="day-9"><div class="day-band"><div class="num">DAY 09</div><h3>Ban Gioc → Nguom Ngao Cave → Cao Bang → Hanoi</h3><div class="route">Cao Bang → Hanoi</div></div><div class="day-body"><p>Visit Nguom Ngao Cave and explore Trung Khanh and Tra Linh.</p><p class="lead">Today's highlights:</p><ul><li>Nguom Ngao Cave</li><li>Angel Eye Mountain (Mat Than)</li><li>Lunch in Cao Bang city</li><li>~2:00 PM limousine bus from Cao Bang, arriving Hanoi ~8:00 PM</li><li>Check in to your Hanoi hotel</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-1.jpg" alt="Nguom Ngao Cave" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Nguom Ngao Cave</span><small>northeast-frontier/d9-1.jpg</small></div></figure><figcaption>Nguom Ngao Cave</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-2.jpg" alt="Angel Eye Mountain" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Angel Eye Mountain</span><small>northeast-frontier/d9-2.jpg</small></div></figure><figcaption>Angel Eye Mountain</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d9-3.jpg" alt="Limousine bus" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Limousine bus</span><small>northeast-frontier/d9-3.jpg</small></div></figure><figcaption>Limousine bus</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch</div><div class="overnight">Overnight at hotel in Hanoi.</div></div></article><article class="day rv" id="day-10"><div class="day-band"><div class="num">DAY 10</div><h3>Hanoi Departure</h3><div class="route">Hanoi → Airport</div></div><div class="day-body"><p>Breakfast and last-minute shopping, then transfer to Hanoi International Airport. End of tour.</p><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-1.jpg" alt="Hanoi morning" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi morning</span><small>northeast-frontier/d10-1.jpg</small></div></figure><figcaption>Hanoi morning</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-2.jpg" alt="Old Quarter shopping" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Old Quarter shopping</span><small>northeast-frontier/d10-2.jpg</small></div></figure><figcaption>Old Quarter shopping</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/d10-3.jpg" alt="Noi Bai Airport" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Noi Bai Airport</span><small>northeast-frontier/d10-3.jpg</small></div></figure><figcaption>Noi Bai Airport</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast</div><div class="overnight">End of services.</div></div></article></div></section>
+
+<section class="ie-sec"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">What's covered</span><h2>Inclusions &amp; exclusions</h2></div><div class="ie rv"><div class="box inc"><div class="hd">📦 Package includes</div><ul><li>Travel insurance for your trip</li><li>Local English-speaking guide</li><li>All meals as per the itinerary (local Vietnamese food)</li><li>Drinking water & soft drinks at lunch, plus local corn wine ('happy water')</li><li>Accommodation: local homestays & ethnic-minority hotels (twin/double sharing)</li><li>Quality Japanese motorbikes (Honda, Yamaha, Suzuki)</li><li>Bus & car transfers (round trip)</li><li>Full motorbike damage insurance</li><li>All fuel</li><li>All entrance tickets & permits</li><li>Helmet, knee & elbow protection, basic rain gear</li><li>Free storage of excess luggage</li><li>Free dorm bed on night-bus arrival (03:00–08:00)</li></ul></div><div class="box exc"><div class="hd">🚫 Not included</div><ul><li>International flights</li><li>Gratuities & tips</li><li>Alcoholic beverages (unless served by a third party, e.g. a hostel)</li><li>Personal expenses</li><li>Personal travel insurance if you self-ride</li></ul></div></div></div></section>
+
+<section class="pricing"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Pricing</span><h2>Package price</h2></div><div class="ptbl rv" style="max-width:540px;margin-top:6px"><div style="display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh)"><span style="font-weight:600;color:var(--ink)">Per person · twin / double sharing</span><span style="font-size:1.6rem;font-weight:800;color:var(--teal-d);white-space:nowrap"><span style="font-size:1rem;vertical-align:super">₹</span>94,999</span></div></div><p class="pnote" style="margin-top:12px">All-inclusive adventure tour. Per person on twin/double sharing; prices exclusive of applicable GST/TCS.</p><p class="visa">✈ International flights are not included — we can arrange them on request. Vietnam visa — ₹2,500 per person (not included).</p></div></section>
+<section class="stay"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Accommodation</span><h2>Where you'll stay</h2></div><p class="tier-note">Cosy local homestays and ethnic-minority hotels along the loop, on twin/double sharing.</p><p class="tier-note" style="background:var(--off);border-left:3px solid var(--teal);padding:9px 12px;border-radius:8px;font-style:normal;color:var(--ink);margin:-4px 0 16px">🕒 <b>Check-in: 2:00 PM.</b> Early check-in is subject to availability.</p><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-hanoi" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-hanoi.jpg" alt="Hotel in Hanoi" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hotel in Hanoi</span><small>northeast-frontier/stay-hanoi.jpg</small></div></figure><figcaption>Hotel in Hanoi · 2 nights</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-hagiang" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-hagiang.jpg" alt="Homestay in Ha Giang" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Homestay in Ha Giang</span><small>northeast-frontier/stay-hagiang.jpg</small></div></figure><figcaption>Homestay in Ha Giang · 2 nights</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-yenminh" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-yenminh.jpg" alt="Homestay in Yen Minh" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Homestay in Yen Minh</span><small>northeast-frontier/stay-yenminh.jpg</small></div></figure><figcaption>Homestay in Yen Minh · 1 night</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-dongvan" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-dongvan.jpg" alt="Hotel in Dong Van" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hotel in Dong Van</span><small>northeast-frontier/stay-dongvan.jpg</small></div></figure><figcaption>Hotel in Dong Van · 1 night</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-dugia" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-dugia.jpg" alt="Homestay in Du Gia" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Homestay in Du Gia</span><small>northeast-frontier/stay-dugia.jpg</small></div></figure><figcaption>Homestay in Du Gia · 1 night</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-pacbo" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-pacbo.jpg" alt="Tay homestay in Pac Bo" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Tay homestay in Pac Bo</span><small>northeast-frontier/stay-pacbo.jpg</small></div></figure><figcaption>Tay homestay in Pac Bo · 1 night</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-bangioc" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/northeast-frontier/stay-bangioc.jpg" alt="Homestay near Ban Gioc" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Homestay near Ban Gioc</span><small>northeast-frontier/stay-bangioc.jpg</small></div></figure><figcaption>Homestay near Ban Gioc · 1 night</figcaption></div></div></div></section>
+
+
+
+<section class="book"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Booking</span><h2>How to book</h2></div>
+  <div class="cards">
+    <div class="bcard rv"><div class="ic">💳</div><div class="step">Step 1 — Confirm</div>
+      <h4>Payment plan</h4>
+      <p>Pay <b>70%</b> of the package amount to confirm your booking. The remaining balance is payable in full <b>15 days before travel</b>.</p></div>
+    <div class="bcard rv"><div class="ic">📄</div><div class="step">Step 2 — Share</div>
+      <h4>Documents to book</h4>
+      <ul><li>Passport scanned copy — front &amp; back</li>
+      <li>One passport-size digital photo with a white background</li></ul></div>
+    <div class="bcard rv"><div class="ic">🛂</div><div class="step">Step 3 — Visa</div>
+      <h4>Visa processing</h4>
+      <p>Vietnam visa processing takes <b>5–10 days</b>, so please share your documents early. (Visa fee is billed separately as noted in the package.)</p></div>
+  </div>
+  <p class="foot-note">To confirm your booking or ask a question, just <b>reply on WhatsApp</b> with your preferred travel dates.</p>
+</div></section>
+
+
+<section class="gallery"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Happy travellers</span><h2>Real people, real memories</h2></div>
+  <div class="gal-outer">
+    <button class="gal-arrow" onclick="galMove(-1)" aria-label="Previous">&#8249;</button>
+    <div class="gal-track" id="galTrack"><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g1.jpg</small></div><div class="gal-cap">Halong Bay</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g2.jpg</small></div><div class="gal-cap">Sapa terraces</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g3.jpg</small></div><div class="gal-cap">Hanoi Old Quarter</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g4.jpg</small></div><div class="gal-cap">Ninh Binh</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g5.jpg</small></div><div class="gal-cap">Ha Giang Loop</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g6.jpg</small></div><div class="gal-cap">Golden Bridge</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g7.jpg</small></div><div class="gal-cap">Hoi An lanterns</div></div><div class="gal-slide lbimg"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g8.jpg</small></div><div class="gal-cap">Phu Quoc</div></div></div>
+    <button class="gal-arrow" onclick="galMove(1)" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="gal-dots" id="galDots"></div>
+  <div class="ghint">Tap a photo to zoom · swipe or use arrows</div>
+</div></section>
+<footer><a class="brand" href="../index.html"><img src="../assets/kt-white.png" alt="Kairali Trails"></a>
+  <div class="tag">Thank you for choosing Kairali Trails</div>
+  <a class="mail" href="mailto:Contact@kairalitrails.com">Contact@kairalitrails.com</a>
+  <div class="fine">www.kairalitrails.com · Curated Vietnam journeys</div></footer>
+
+<script>
+(function(){
+ var nav=document.querySelector('.nav'),cover=document.querySelector('.cover, .hero');
+ if(nav){var t=cover?cover.offsetHeight*0.72:400;
+   addEventListener('scroll',function(){nav.classList.toggle('show',scrollY>t)},{passive:true});}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+<div class="lb" id="lb"><span class="lb-x" onclick="lbClose()">&times;</span><button class="lb-nav prev" onclick="lbStep(-1)" aria-label="Previous">&#8249;</button><img id="lbImg" src="" alt=""><button class="lb-nav next" onclick="lbStep(1)" aria-label="Next">&#8250;</button><div class="lb-count" id="lbCount"></div></div>
+<script>
+(function(){
+ var lb=document.getElementById('lb'),lbi=document.getElementById('lbImg'),lbc=document.getElementById('lbCount');
+ var group=[],gi=0;
+ function srcOf(im){return im.currentSrc||im.src;}
+ function show(){lbi.src=srcOf(group[gi]);lbc.textContent=group.length>1?(gi+1)+' / '+group.length:'';}
+ window.lbStep=function(d){if(!group.length)return;gi=(gi+d+group.length)%group.length;show();};
+ window.lbClose=function(){lb.classList.remove('on');};
+ lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
+ var sels='.photos figure.ph, .meal-row .meal-ph, .hotel-wrap .hotel-main, .hotel-wrap .hotel-card, .gal-track .gal-slide, .hc-track .hc-slide';
+ document.querySelectorAll(sels).forEach(function(el){
+  el.style.cursor='pointer';
+  el.addEventListener('click',function(){
+   var im=el.querySelector('img'); if(!im||im.style.display==='none')return;
+   var box=el.closest('.photos, .meal-row, .hc-track, .gal-track')||el;
+   group=Array.prototype.slice.call(box.querySelectorAll('img')).filter(function(x){return x.style.display!=='none';});
+   gi=group.indexOf(im); if(gi<0)gi=0; if(box.classList.contains('photos')){group=[im];gi=0;lb.classList.add('solo');}else{lb.classList.remove('solo');} show(); lb.classList.add('on');
+  });
+ });
+ var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+ lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)lbStep(dx<0?1:-1);x0=null;},{passive:true});
+ document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+ // gallery carousel
+ var track=document.getElementById('galTrack');
+ if(track){var dots=document.getElementById('galDots'),s=track.children,idx=0;
+  for(var i=0;i<s.length;i++){(function(i){var b=document.createElement('b');if(!i)b.className='on';b.onclick=function(ev){ev.stopPropagation();go(i)};dots.appendChild(b);})(i);}
+  function go(i){idx=Math.max(0,Math.min(s.length-1,i));s[idx].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});for(var d=0;d<dots.children.length;d++)dots.children[d].className=d===idx?'on':'';}
+  window.galMove=function(d){go(idx+d)};
+ }
+})();
+</script>
+<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "northeast-frontier", "CITIES": [], "ALL": [], "TIERS": {"3": {"price": {"adult": 41500, "c511": 36500, "c24": 32500}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"sapa": "Sapa Panorama"}}, "4": {"price": {"adult": 47500, "c511": 42500, "c24": 38500}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"sapa": "Sapa Vista Hotel"}}, "5": {"price": {"adult": 55500, "c511": 50500, "c24": 46500}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"sapa": "KK Hotel Sapa"}}}};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,ALL=D.ALL,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
+function fmt(n){return typeof n==='number'?('₹'+n.toLocaleString('en-IN')):n;}
+function probe(rel,cb){var k=0;(function t(){if(k>=EXT.length){cb(null);return;}var u=BASE+'/'+PKG+'/'+rel+'.'+EXT[k];var im=new Image();im.onload=function(){cb(u);};im.onerror=function(){k++;t();};im.src=u;})();}
+function seq(pre,onU,done){var i=1,o=[];(function nx(){if(i>30){done(o);return;}probe(pre+i,function(u){if(u){o.push(u);onU(u);i++;nx();}else done(o);});})();}
+function dots(c,n){var d=document.getElementById('dots-'+c);if(!d)return;d.innerHTML='';if(n<2)return;for(var j=0;j<n;j++){var x=document.createElement('span');x.className='hc-dot'+(j===0?' on':'');d.appendChild(x);}}
+function syncDots(c){var tr=document.getElementById('track-'+c),d=document.getElementById('dots-'+c);if(!tr||!d||!d.children.length)return;var idx=Math.round(tr.scrollLeft/tr.clientWidth);[].forEach.call(d.children,function(x,j){x.classList.toggle('on',j===idx);});}
+function buildCarousel(c,t){var tr=document.getElementById('track-'+c);if(!tr)return;tr.innerHTML='';var urls=[];
+ function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(c,urls.length);}
+ seq(c+'-'+t+'star-',function(u){urls.push(u);add(u);},function(){
+  if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+c+'-'+t+'star-1.jpg</small></div>';tr.appendChild(ph);}
+  dots(c,urls.length);var _car=tr.closest('.hcarousel');if(_car){var _ar=_car.querySelectorAll('.hc-arrow');for(var _a=0;_a<_ar.length;_a++){_ar[_a].style.display=urls.length>1?'':'none';}}});
+ tr.onscroll=function(){syncDots(c);};}
+function openLB(u,i){if(!u.length)return;LB=u;LBi=i;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
+window.closeLB=function(){document.getElementById('hclb').classList.remove('on');};
+window.lbStep=function(d){if(!LB.length)return;LBi=(LBi+d+LB.length)%LB.length;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;};
+window.hcMove=function(c,dir){var tr=document.getElementById('track-'+c);if(tr)tr.scrollBy({left:dir*tr.clientWidth,behavior:'smooth'});};
+window.setTier=function(t){var d=TIERS[t];['adult','c511','c24'].forEach(function(k){var el=document.getElementById('pr-'+k);if(el)el.textContent=fmt(d.price[k]);});
+ CITIES.forEach(function(c){var nm=document.getElementById('name-'+c);if(nm)nm.textContent=d.hotels[c];var st=document.getElementById('star-'+c);if(st)st.textContent='★'.repeat(parseInt(t));var am=document.getElementById('amen-'+c);if(am)am.innerHTML=d.amen.map(function(a){return '<span>✓ '+a+'</span>';}).join('');});
+ ALL.forEach(function(c){buildCarousel(c,t);});
+ document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.toggle('on',b.dataset.tier===t);});};
+document.addEventListener('keydown',function(e){if(!document.getElementById('hclb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+})();</script><script>(function(){window.addEventListener("wheel",function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});window.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&["+","-","=","0","_"].indexOf(e.key)!==-1)e.preventDefault();});["gesturestart","gesturechange","gestureend"].forEach(function(g){document.addEventListener(g,function(e){e.preventDefault();});});})();</script></body></html>

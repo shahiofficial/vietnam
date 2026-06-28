@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Bay &amp; Beach · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
+:root{
+  --teal:#0496a5; --teal-d:#037885; --green:#24fbaa; --cyan:#29ffff; --blue:#1e98f7;
+  --orange:#f3792a; --yellow:#fefdbb;
+  --dark:#052a30; --dark-2:#0a3a42; --off:#f4fcfd; --muted:#5a9aa5;
+  --ink:#0e2e34; --line:#d7eef1; --card:#ffffff;
+  --r-s:8px; --r-m:16px; --r-l:24px;
+  --sh:0 4px 24px rgba(4,150,165,.12); --sh-h:0 14px 40px rgba(4,150,165,.22);
+  --wrap:1200px; --pad:clamp(20px,5vw,80px);
+  --f-display:'Tanker','Poppins',system-ui,sans-serif;
+  --f-serif:'Nyght Serif',Georgia,'Times New Roman',serif;
+  --f-body:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--off);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.16;font-weight:700}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;
+  justify-content:space-between;padding:12px clamp(16px,4vw,40px);
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+  box-shadow:0 2px 18px rgba(4,150,165,.10);transform:translateY(-110%);transition:transform .35s ease}
+.nav.show{transform:translateY(0)}
+.nav .brand img{height:30px;width:auto}
+.nav .back{font-size:.82rem;font-weight:600;color:var(--teal-d);border:1.5px solid var(--line);
+  padding:8px 16px;border-radius:999px;transition:.2s}
+.nav .back:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ---------- cover ---------- */
+.cover{position:relative;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:space-between;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,var(--dark) 0%,var(--teal-d) 68%,var(--teal) 105%)}
+.cover .bg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;z-index:0}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(5,42,48,.55) 0%,rgba(5,42,48,.30) 40%,rgba(5,42,48,.85) 100%)}
+.cover>*{position:relative;z-index:2}
+.cover .top{display:flex;justify-content:space-between;align-items:center;padding:clamp(20px,4vw,38px) var(--pad)}
+.cover .top .brand img{height:38px;width:auto}
+.cover .top .all{font-size:.8rem;font-weight:600;border:1.5px solid rgba(255,255,255,.55);
+  padding:8px 16px;border-radius:999px;transition:.2s}
+.cover .top .all:hover{background:#fff;color:var(--teal-d)}
+.cover .mid{padding:0 var(--pad);max-width:940px}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.cover h1{font-family:var(--f-display);font-size:clamp(2.4rem,6.4vw,4.6rem);font-weight:700;
+  letter-spacing:.5px;text-shadow:0 4px 30px rgba(0,0,0,.35);line-height:1.04}
+.cover .tagline{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.5rem);
+  color:#e7fdf5;margin-top:18px;font-weight:400}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-size:.8rem;font-weight:500;padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(41,255,255,.35);backdrop-filter:blur(4px)}
+.cover .bot{display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;justify-content:space-between;
+  padding:0 var(--pad) clamp(28px,5vw,56px)}
+.price-tag{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-tag .from{font-size:.78rem;color:#bfeee2;font-weight:300}
+.price-tag .amt{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;color:#fff}
+.price-tag .amt .cur{color:var(--green)}
+.price-tag .per{font-size:.82rem;color:#bfeee2}
+.scroll{display:flex;align-items:center;gap:10px;font-size:.74rem;color:#cdf6ea;
+  letter-spacing:.12em;text-transform:uppercase}
+.scroll .arr{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);
+  display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---------- quick facts ---------- */
+.facts{background:var(--dark);color:#fff}
+.facts .wrap{display:flex;flex-wrap:wrap;gap:8px clamp(28px,5vw,64px);padding-top:22px;padding-bottom:22px}
+.fact{display:flex;flex-direction:column;gap:2px;min-width:120px}
+.fact b{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600}
+.fact span{font-size:1.02rem;font-weight:500}
+
+/* ---------- sections ---------- */
+section{padding:clamp(48px,7vw,84px) 0}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head .eyebrow{color:var(--teal);margin:0}
+.sec-head h2{font-family:var(--f-display);font-size:clamp(1.9rem,3.8vw,2.7rem);
+  color:var(--dark);letter-spacing:.3px;font-weight:700}
+
+/* ---------- itinerary ---------- */
+.day{margin-bottom:clamp(30px,4vw,52px);background:var(--card);border-radius:var(--r-l);
+  box-shadow:var(--sh);overflow:hidden;border:1px solid var(--line)}
+.day-band{background:linear-gradient(115deg,var(--teal-d),var(--teal));color:#fff;
+  padding:clamp(18px,3vw,26px) clamp(20px,4vw,34px);position:relative}
+.day-band::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--green),var(--cyan))}
+.day-band .num{font-size:.72rem;letter-spacing:.28em;font-weight:600;color:#bdf6e4}
+.day-band h3{font-size:clamp(1.18rem,2.6vw,1.55rem);margin-top:4px;font-weight:700}
+.day-band .route{font-family:'DM Sans',var(--f-body);font-style:normal;font-size:.9rem;letter-spacing:.2px;color:#e1fdf3;margin-top:6px;font-weight:400}
+.day-body{padding:clamp(20px,4vw,34px)}
+.day-body p{margin:0 0 12px}
+.day-body .lead{font-weight:600;color:var(--teal-d);margin-bottom:8px}
+.day-body ul{margin:0 0 16px;padding:0;list-style:none}
+.day-body li{position:relative;padding-left:22px;margin-bottom:7px}
+.day-body li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 3px rgba(36,251,170,.18)}
+.day-body li.sub{padding-left:40px;color:var(--muted)}
+.day-body li.sub::before{left:22px;background:var(--teal);box-shadow:none;width:5px;height:5px;top:12px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 4px}
+.photos.two{grid-template-columns:repeat(2,1fr)}
+figure.ph{margin:0;border-radius:var(--r-m);overflow:hidden;position:relative;background:#e4f4f6;aspect-ratio:4/3}
+figure.ph img{width:100%;height:100%;object-fit:cover}
+.ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;text-align:center;padding:10px;
+  background:repeating-linear-gradient(45deg,#eaf7f8,#eaf7f8 12px,#e2f3f5 12px,#e2f3f5 24px);border:1.5px dashed #a9d9df}
+.ph-fallback span{font-weight:600;color:var(--teal-d);font-size:.86rem}
+.ph-fallback small{font-size:.66rem;color:var(--muted);font-family:ui-monospace,monospace}
+figcaption{font-family:var(--f-serif);font-style:italic;font-size:.8rem;color:var(--muted);text-align:center;margin-top:6px}
+.figwrap{display:flex;flex-direction:column}
+.meals{display:inline-flex;align-items:center;gap:8px;background:#e9faf3;color:var(--teal-d);font-weight:600;
+  font-size:.84rem;padding:8px 16px;border-radius:999px;margin-top:12px;border:1px solid #c6f0e0}
+.overnight{margin-top:12px;font-family:var(--f-serif);font-style:italic;color:var(--muted);font-size:.95rem}
+
+/* ---------- inc / exc ---------- */
+.ie{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,28px)}
+.ie .box{background:var(--card);border-radius:var(--r-l);box-shadow:var(--sh);border:1px solid var(--line);overflow:hidden}
+.ie .box .hd{padding:16px 24px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.ie .inc .hd{background:linear-gradient(115deg,var(--teal-d),var(--teal))}
+.ie .exc .hd{background:linear-gradient(115deg,#9a4a18,var(--orange))}
+.ie ul{list-style:none;margin:0;padding:20px 24px}
+.ie li{position:relative;padding-left:26px;margin-bottom:10px;font-size:.94rem}
+.ie .inc li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800}
+.ie .exc li::before{content:"✕";position:absolute;left:0;top:0;color:var(--orange);font-weight:800}
+
+/* ---------- pricing ---------- */
+.pricing{background:var(--dark);color:#fff}
+.pricing .sec-head h2{color:#fff}
+.pricing .sec-head .eyebrow{color:var(--green)}
+.ptable{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-l);
+  overflow:hidden;max-width:640px}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 26px;border-bottom:1px solid rgba(255,255,255,.10)}
+.prow:last-child{border-bottom:none}
+.prow .t{font-weight:500}
+.prow .v{font-weight:800;font-size:1.25rem;color:var(--green);white-space:nowrap}
+.pnote{font-size:.82rem;color:#bfeee2;margin-top:14px;font-style:italic}
+.visa{font-size:.86rem;color:#cdeee9;margin-top:8px}
+
+/* ---------- how to book ---------- */
+.book{background:linear-gradient(180deg,#eef9fb,var(--off))}
+.book .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,24px)}
+.bcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:26px 24px;
+  box-shadow:var(--sh);position:relative;overflow:hidden}
+.bcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--teal),var(--cyan),var(--blue))}
+.bcard .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;
+  margin-bottom:14px;background:#e7fbff;border:1px solid #c4f2f7}
+.bcard h4{font-size:1.05rem;color:var(--dark);margin-bottom:6px;font-weight:700}
+.bcard .step{font-family:var(--f-serif);font-style:italic;color:var(--blue);font-size:.82rem;margin-bottom:10px}
+.bcard p{font-size:.92rem;color:var(--ink);margin:0}
+.bcard ul{list-style:none;margin:8px 0 0;padding:0}
+.bcard li{position:relative;padding-left:20px;margin-bottom:6px;font-size:.92rem}
+.bcard li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.book .foot-note{margin-top:26px;font-size:.95rem;color:var(--teal-d);font-weight:500;text-align:center}
+.book .foot-note b{color:var(--dark)}
+
+/* ---------- footer ---------- */
+footer{background:#021c20;color:#cfeef0;text-align:center;padding:46px var(--pad)}
+footer .brand img{height:46px;width:auto;margin:0 auto}
+footer .tag{color:var(--muted);margin-top:12px;font-size:.9rem}
+footer a.mail{color:var(--green);font-weight:500;margin-top:14px;display:inline-block;font-size:.95rem}
+footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scroll .arr{animation:none}}
+
+@media(max-width:820px){ .book .cards{grid-template-columns:1fr} }
+@media(max-width:760px){ .photos{grid-template-columns:1fr 1fr} .ie{grid-template-columns:1fr}
+  .cover .bot{flex-direction:column;align-items:flex-start} }
+@media(max-width:460px){ .photos,.photos.two{grid-template-columns:1fr} }
+
+/* =========== LISTING PAGE =========== */
+.hero{position:relative;color:#fff;overflow:hidden;padding:clamp(92px,15vh,140px) 0 clamp(54px,9vw,92px);
+  background:linear-gradient(135deg,var(--dark) 0%,var(--teal-d) 62%,var(--teal) 112%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.18;
+  background:radial-gradient(circle at 82% 8%,var(--green),transparent 42%),
+             radial-gradient(circle at 6% 92%,var(--blue),transparent 40%),
+             radial-gradient(circle at 60% 60%,var(--cyan),transparent 30%)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(5,42,48,.45) 0%,rgba(5,42,48,.55) 45%,rgba(5,42,48,.82) 100%)}
+.hero::before{z-index:1}
+.hero .wrap{position:relative;z-index:2}
+.hero .brand img{height:48px;width:auto;margin-bottom:30px}
+.hero h1{font-family:var(--f-display);font-size:clamp(2.6rem,7vw,5rem);font-weight:700;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{max-width:580px;color:#e3f7f0;font-weight:300;margin-top:16px;
+  font-family:var(--f-serif);font-style:italic;font-size:clamp(1.05rem,2.1vw,1.35rem)}
+.hero .meta{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero .meta div b{display:block;font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--green)}
+.hero .meta div span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#bfeee2}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+  gap:clamp(20px,3vw,30px);padding-top:clamp(44px,6vw,72px);padding-bottom:20px}
+.card{background:var(--card);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh);
+  border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--sh-h)}
+.card .top{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--teal-d),var(--teal));overflow:hidden}
+.card .top img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .top img{transform:scale(1.06)}
+.card .dur{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:var(--teal-d);
+  font-weight:700;font-size:.74rem;padding:6px 12px;border-radius:999px}
+.card-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;color:#dff;padding:14px;text-align:center;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.06),rgba(255,255,255,.06) 14px,transparent 14px,transparent 28px)}
+.card-ph span{font-weight:700;font-size:.9rem;letter-spacing:.05em}
+.card-ph small{font-size:.66rem;font-family:ui-monospace,monospace;opacity:.8}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:var(--f-display);font-size:1.3rem;color:var(--dark);letter-spacing:.2px;font-weight:700}
+.card .rt{color:var(--muted);font-size:.86rem;margin-top:8px}
+.card .tagl{font-family:'DM Sans',var(--f-body);font-style:normal;color:var(--teal-d);font-size:.85rem;letter-spacing:.2px;margin-top:10px}.hot{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;font-family:var(--f-body);font-weight:600;font-size:.72rem;letter-spacing:.3px;padding:5px 10px;border-radius:999px;box-shadow:0 4px 12px rgba(243,121,42,.45)}.hot2{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;font-family:var(--f-body);font-weight:600;font-size:.74rem;letter-spacing:.3px;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;
+  border-top:1px solid var(--line)}
+.card .pr{display:flex;flex-direction:column}
+.card .pr small{font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.card .pr b{font-size:1.22rem;color:var(--dark);font-weight:800}
+.card .pr b .cur{color:var(--teal)}
+.card .pr.tba b{font-size:1rem;color:var(--orange)}
+.card .view{font-size:.82rem;font-weight:700;color:#fff;background:linear-gradient(115deg,var(--teal-d),var(--teal));
+  padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:.25s;white-space:nowrap}
+.card:hover .view{background:linear-gradient(115deg,var(--teal),var(--green));color:var(--dark)}
+.list-note{text-align:center;color:var(--muted);font-size:.86rem;padding:8px var(--pad) 64px}
+
+.hotel-wrap{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.hotel-main{border-radius:16px;overflow:hidden;position:relative;height:240px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-sub{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hotel-card{border-radius:16px;overflow:hidden;position:relative;height:165px;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hotel-main img,.hotel-card img,.meal-ph img,.gal-slide img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.hotel-main:hover img,.hotel-card:hover img{transform:scale(1.04)}
+.itag{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.95);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--teal-d);z-index:2}
+.perks{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.perk{background:#fff;border:1.5px solid rgba(4,150,165,.22);border-radius:100px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--teal-d)}
+.meal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.meal-ph{border-radius:12px;overflow:hidden;aspect-ratio:1;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.meal-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:16px 10px 8px;color:#fff;font-size:12px;font-weight:600;z-index:2}
+.meal-badges{display:flex;gap:8px;margin-top:10px}
+.mbg{flex:1;background:#052a30;border-radius:12px;padding:14px;text-align:center}
+.mbg-n{font-weight:800;font-size:34px;color:var(--green);line-height:1}
+.mbg h3{font-size:12px;font-weight:700;color:#fff;margin-top:4px;font-family:var(--f-body)}
+.gal-outer{position:relative;display:flex;align-items:center;gap:8px}
+.gal-track{display:flex;overflow-x:auto;gap:10px;padding:6px 0;flex:1;scrollbar-width:none;scroll-behavior:smooth}
+.gal-track::-webkit-scrollbar{display:none}
+.gal-slide{flex:0 0 calc(80% - 8px);aspect-ratio:1/1;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.gal-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,42,48,.9),transparent);padding:22px 14px 12px;color:#fff;font-weight:600;font-size:13px;z-index:2}
+.gal-arrow{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(4,150,165,.1);border:1.5px solid rgba(4,150,165,.3);color:var(--teal-d);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gal-dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+.gal-dots b{width:7px;height:7px;border-radius:50%;background:rgba(4,150,165,.25);cursor:pointer;display:block}
+.gal-dots b.on{background:var(--teal)}
+.ghint{text-align:center;color:var(--muted);font-size:11px;margin-top:10px}
+.lb{position:fixed;inset:0;background:rgba(3,20,23,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px}
+.lb-x{position:absolute;top:16px;right:22px;color:#fff;font-size:34px;cursor:pointer;line-height:1;z-index:3}
+figure.ph{cursor:pointer}
+.ptbl{border-radius:16px;overflow:hidden;border:1px solid rgba(4,150,165,.16);background:#fff}
+.ptbl-head{display:flex;justify-content:space-between;background:var(--teal-d);color:#fff;padding:15px 20px;font-weight:700;font-size:13.5px}
+.ptbl-row{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-top:1px solid rgba(4,150,165,.1)}
+.ptbl-row .cat{font-weight:600;color:var(--dark);font-size:15px;display:flex;align-items:center;gap:9px}
+.ptbl-row .amt{font-weight:800;color:var(--orange);font-size:18px}
+.paypol{margin-top:16px;background:#fff;border-radius:16px;border:1px solid rgba(4,150,165,.16);padding:18px 20px}
+.paypol-h{font-weight:700;color:var(--dark);font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.paypol-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ppc{border-radius:12px;padding:14px;background:var(--off)}
+.ppc.a{border-left:3px solid var(--teal)}
+.ppc.b{border-left:3px solid var(--orange)}
+.ppc-lbl{font-size:11px;color:var(--muted);margin-bottom:4px;font-weight:600}
+.ppc-pct{font-size:28px;font-weight:800;line-height:1}
+.ppc.a .ppc-pct{color:var(--orange)}
+.ppc.b .ppc-pct{color:var(--teal)}
+.ppc-sub{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.hotel-name{font-weight:700;color:var(--dark);font-size:1.05rem;margin:2px 0 12px;display:flex;align-items:center;gap:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.lb-nav.prev{left:14px}.lb-nav.next{right:14px}
+.lb-count{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px}
+.tier-toggle{display:flex;gap:6px;margin:4px 0 8px;background:var(--off);padding:5px;border-radius:100px;width:fit-content}
+.tier-btn{border:none;background:transparent;padding:9px 20px;border-radius:100px;font-family:var(--f-body);font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;transition:.2s}
+.tier-btn.on{background:var(--teal);color:#fff;box-shadow:0 3px 10px rgba(4,150,165,.3)}
+.tier-note{font-size:.78rem;color:var(--muted);margin:0 0 16px;font-style:italic}
+.hcity{background:#fff;border:1px solid rgba(4,150,165,.14);border-radius:18px;overflow:hidden;margin-bottom:14px}
+.hcarousel{position:relative}
+.hc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-slide{flex:0 0 100%;scroll-snap-align:start;height:230px;position:relative;cursor:pointer;background:linear-gradient(135deg,var(--teal-d),var(--teal))}
+.hc-slide img{width:100%;height:100%;object-fit:cover}
+.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.96);border:1px solid rgba(0,0,0,.06);font-size:22px;line-height:1;color:var(--teal-d);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:6;box-shadow:0 3px 12px rgba(0,0,0,.4);-webkit-tap-highlight-color:transparent}
+.hc-arrow.prev{left:10px}.hc-arrow.next{right:10px}
+.hc-body{padding:16px 18px}
+.hc-name{font-weight:700;font-size:1.1rem;color:var(--dark)}
+.hc-meta{margin-top:5px;color:var(--muted);font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.star-badge{color:#f5a623;letter-spacing:1px;font-size:.95rem}
+.hc-amen{display:flex;flex-wrap:wrap;gap:7px 15px;margin-top:13px}
+.hc-amen span{font-size:.82rem;color:var(--teal-d);font-weight:600}
+.fixed-stays{margin-top:6px}
+.fixed-stays h4{font-size:.82rem;color:var(--muted);font-weight:700;margin-bottom:9px;letter-spacing:.3px;text-transform:uppercase}
+.fixed-chip{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid rgba(4,150,165,.12);border-radius:12px;padding:10px 14px;font-size:.85rem;color:var(--dark);font-weight:600;margin:0 8px 8px 0}
+.hc-dots{display:flex;gap:6px;justify-content:center;padding:11px 0 3px;flex-wrap:wrap}
+.hc-dot{width:7px;height:7px;border-radius:50%;background:rgba(4,150,165,.25);transition:.2s}
+.hc-dot.on{background:var(--teal);transform:scale(1.25)}
+.hc-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff;font-weight:700;text-align:center;gap:5px;font-size:1rem}
+.hc-ph small{opacity:.85;font-weight:500;font-size:.72rem;font-family:monospace}
+.hclb{position:fixed;inset:0;background:rgba(5,42,48,.95);z-index:99999;display:none;align-items:center;justify-content:center}
+.hclb.on{display:flex}
+.hclb img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 12px 50px rgba(0,0,0,.5)}
+.hclb .x{position:absolute;top:16px;right:22px;color:#fff;font-size:34px;cursor:pointer;background:none;border:none;line-height:1}
+.hclb .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.16);border:none;color:#fff;font-size:28px;width:48px;height:48px;border-radius:50%;cursor:pointer}
+.hclb .nav.p{left:16px}.hclb .nav.n{right:16px}
+.hclb .cnt{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-size:.85rem;opacity:.85}
+
+.trip-ov{background:#fff;border:1px solid rgba(4,150,165,.15);border-radius:16px;padding:16px 18px;margin:0 0 8px}
+.ov-route{display:flex;align-items:flex-start;flex-wrap:wrap;background:#f4fcfd;border-radius:12px;padding:14px 8px;margin-bottom:14px}
+.ov-stop{display:flex;flex-direction:column;align-items:center;min-width:58px;flex:0 0 auto}
+.ov-dot{width:14px;height:14px;border-radius:50%;background:#0496a5;border:3px solid #cdeef0}
+.ov-name{font-weight:700;font-size:.74rem;margin-top:6px;text-align:center;color:#052a30;line-height:1.2}
+.ov-line{flex:1;height:3px;background:linear-gradient(90deg,#0496a5,#24fbaa);margin-top:6px;min-width:12px;border-radius:2px}
+.ov-day{display:flex;gap:11px;position:relative;text-decoration:none;color:inherit}
+.ov-day:not(:last-child)::before{content:"";position:absolute;left:15px;top:34px;bottom:-3px;width:2px;background:#d6edef}
+.ov-num{flex:0 0 32px;height:32px;border-radius:50%;background:#0496a5;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:1;font-size:.9rem}
+.ov-card{flex:1;background:#f4fcfd;border-radius:11px;padding:9px 13px;margin-bottom:9px;display:flex;align-items:center;gap:11px;transition:.15s}
+.ov-day:hover .ov-card{background:#e3f5f7}
+.ov-ico{font-size:1.2rem;flex:0 0 auto}
+.ov-tx .ov-d{font-size:.67rem;font-weight:800;color:#0496a5;letter-spacing:.5px}
+.ov-tx .ov-t{font-weight:600;font-size:.87rem;line-height:1.3;color:#052a30}
+.day{scroll-margin-top:84px}
+.lb.solo .lb-nav,.lb.solo .lb-count{display:none}</style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];}else{el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}}</script></head><body>
+<nav class="nav"><a class="brand" href="../index.html"><img src="../assets/kt-dark.png" alt="Kairali Trails"></a>
+  <a class="back" href="../index.html">← All Vietnam packages</a></nav>
+
+<header class="cover">
+  <img class="bg" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/cover" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/cover.jpg" alt="" onerror="ktImg(this)">
+  <div class="top"><a class="brand" href="../index.html"><img src="../assets/kt-white.png" alt="Kairali Trails"></a>
+    <a class="all" href="../index.html">All packages</a></div>
+  <div class="mid"><span class="eyebrow">Vietnam · 6 Days / 5 Nights</span>
+    <h1>Bay &amp; Beach</h1><p class="tagline">Hanoi • Ninh Binh • Ha Long Bay Cruise • Phu Quoc</p>
+    <div class="chips"><span class="chip">Hanoi</span><span class="chip">Ninh Binh</span><span class="chip">Ha Long Bay Cruise</span><span class="chip">Phu Quoc</span></div></div>
+  <div class="bot"><div class="price-tag"><span class="amt"><span class="cur">₹</span>41,000</span><span class="per">per person</span></div><div class="hero-flightnote" style="font-size:.72rem;color:#bfeee2;font-weight:400;margin-top:7px;letter-spacing:.2px;flex-basis:100%">International flights not included</div>
+    <div class="scroll">Scroll to explore <span class="arr">↓</span></div></div>
+</header>
+
+<div class="facts"><div class="wrap"><div class="fact"><b>Duration</b><span>6 Days / 5 Nights</span></div><div class="fact"><b>Route</b><span>Hanoi · Ninh Binh · Ha Long Bay · Phu Quoc</span></div><div class="fact"><b>Style</b><span>Cruise · culture · beaches</span></div><div class="fact"><b>Stay</b><span>3★ hotels · cruise cabin · beach resort</span></div></div></div>
+
+<section class="itinerary"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Day by day</span><h2>Your itinerary</h2></div>
+  <div class="trip-ov rv"><div class="ov-route"><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Hanoi</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Ninh Binh</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Ha Long Bay</div></div><div class="ov-line"></div><div class="ov-stop"><div class="ov-dot"></div><div class="ov-name">Phu Quoc</div></div></div><a class="ov-day" href="#day-1"><div class="ov-num">1</div><div class="ov-card"><span class="ov-ico">🛬</span><div class="ov-tx"><div class="ov-d">DAY 1</div><div class="ov-t">Arrival in Hanoi – City Welcome</div></div></div></a><a class="ov-day" href="#day-2"><div class="ov-num">2</div><div class="ov-card"><span class="ov-ico">🛶</span><div class="ov-tx"><div class="ov-d">DAY 2</div><div class="ov-t">Hanoi – Ninh Binh Day Trip – Hanoi</div></div></div></a><a class="ov-day" href="#day-3"><div class="ov-num">3</div><div class="ov-card"><span class="ov-ico">🚢</span><div class="ov-tx"><div class="ov-d">DAY 3</div><div class="ov-t">Hanoi – Ha Long Bay Overnight Cruise</div></div></div></a><a class="ov-day" href="#day-4"><div class="ov-num">4</div><div class="ov-card"><span class="ov-ico">✈️</span><div class="ov-tx"><div class="ov-d">DAY 4</div><div class="ov-t">Ha Long Bay – Hanoi – Fly to Phu Quoc</div></div></div></a><a class="ov-day" href="#day-5"><div class="ov-num">5</div><div class="ov-card"><span class="ov-ico">🏝️</span><div class="ov-tx"><div class="ov-d">DAY 5</div><div class="ov-t">Phu Quoc Island – Optional Tours</div></div></div></a><a class="ov-day" href="#day-6"><div class="ov-num">6</div><div class="ov-card"><span class="ov-ico">🛫</span><div class="ov-tx"><div class="ov-d">DAY 6</div><div class="ov-t">Phu Quoc Departure</div></div></div></a></div><article class="day rv" id="day-1"><div class="day-band"><div class="num">DAY 01</div><h3>Arrival in Hanoi – City Welcome</h3><div class="route">Hanoi</div></div><div class="day-body"><p>Arrive in Hanoi and transfer to your hotel in the Old Quarter.</p><p>Welcome lunch, then a half-day city tour – or spend the day at leisure with a gentle orientation around the city.</p><p class="lead">Highlights:</p><ul><li>Hoan Kiem Lake – the heart of Hanoi</li><li>Hanoi Old Quarter & its 36 trade streets</li><li>Hoa Lo (Hilton) Prison</li><li>Temple of Literature</li><li>Local train-street cafés</li><li>Evening street life</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-1.jpg" alt="Hoan Kiem Lake" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hoan Kiem Lake</span><small>bay-and-beach/d1-1.jpg</small></div></figure><figcaption>Hoan Kiem Lake</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-2.jpg" alt="Hanoi Old Quarter" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hanoi Old Quarter</span><small>bay-and-beach/d1-2.jpg</small></div></figure><figcaption>Hanoi Old Quarter</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d1-3.jpg" alt="Temple of Literature" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Temple of Literature</span><small>bay-and-beach/d1-3.jpg</small></div></figure><figcaption>Temple of Literature</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Lunch</div><div class="overnight">Overnight at hotel in Hanoi Old Quarter.</div></div></article><article class="day rv" id="day-2"><div class="day-band"><div class="num">DAY 02</div><h3>Hanoi – Ninh Binh Day Trip – Hanoi</h3><div class="route">Hanoi → Ninh Binh → Hanoi</div></div><div class="day-body"><p>Travel to Ninh Binh, often called the 'Ha Long Bay on Land' for its river landscapes, rice fields and limestone mountains. A sampan boat ride through Tam Coc or Trang An is one of the most scenic experiences in Northern Vietnam.</p><p class="lead">Highlights of the day:</p><ul><li>Visit Hoa Lu Ancient Capital</li><li>Sampan boat trip through Trang An – limestone karsts and caves</li><li>Peaceful countryside views</li><li>Optional cycling around villages and rice fields</li><li>Optional climb to Hang Mua viewpoint for panoramic scenery</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-1.jpg" alt="Hoa Lu Ancient Capital" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hoa Lu Ancient Capital</span><small>bay-and-beach/d2-1.jpg</small></div></figure><figcaption>Hoa Lu Ancient Capital</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-2.jpg" alt="Trang An boat trip" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Trang An boat trip</span><small>bay-and-beach/d2-2.jpg</small></div></figure><figcaption>Trang An boat trip</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d2-3.jpg" alt="Hang Mua viewpoint" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Hang Mua viewpoint</span><small>bay-and-beach/d2-3.jpg</small></div></figure><figcaption>Hang Mua viewpoint</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch</div><div class="overnight">Overnight at hotel in Hanoi Old Quarter.</div></div></article><article class="day rv" id="day-3"><div class="day-band"><div class="num">DAY 03</div><h3>Hanoi – Ha Long Bay Overnight Cruise</h3><div class="route">Hanoi → Ha Long Bay</div></div><div class="day-body"><p>Depart Hanoi for Ha Long Bay and board your overnight cruise – emerald waters, limestone islands, caves, floating communities, kayaking and sunset views from the sundeck.</p><p class="lead">On board today:</p><ul><li>Scenic transfer from Hanoi to Ha Long Bay</li><li>Welcome lunch on board</li><li>Cruise among limestone islands and islets</li><li>Visit a cave or island (depending on the cruise program)</li><li>Kayaking or bamboo boat activity</li><li>Sunset on the sundeck</li><li>Dinner and overnight on the cruise</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-1.jpg" alt="Ha Long Bay cruise" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ha Long Bay cruise</span><small>bay-and-beach/d3-1.jpg</small></div></figure><figcaption>Ha Long Bay cruise</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-2.jpg" alt="Limestone islands & cave" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Limestone islands & cave</span><small>bay-and-beach/d3-2.jpg</small></div></figure><figcaption>Limestone islands & cave</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d3-3.jpg" alt="Kayaking" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Kayaking</span><small>bay-and-beach/d3-3.jpg</small></div></figure><figcaption>Kayaking</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch, Dinner</div><div class="overnight">Overnight on Ha Long Bay cruise in a private cabin.</div></div></article><article class="day rv" id="day-4"><div class="day-band"><div class="num">DAY 04</div><h3>Ha Long Bay – Hanoi – Fly to Phu Quoc</h3><div class="route">Ha Long Bay → Hanoi → Phu Quoc</div></div><div class="day-body"><p>Wake early for sunrise over Ha Long Bay. Join a light morning activity such as Tai Chi, enjoy breakfast, then continue cruising before disembarkation. Transfer back toward Hanoi for your domestic flight to Phu Quoc Island.</p><p class="lead">Today's journey:</p><ul><li>Sunrise on Ha Long Bay</li><li>Morning cruise experience</li><li>Brunch on board</li><li>Transfer to airport</li><li>Domestic flight to Phu Quoc</li><li>Check in to your beach resort</li><li>Free evening at leisure</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-1.jpg" alt="Ha Long sunrise" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Ha Long sunrise</span><small>bay-and-beach/d4-1.jpg</small></div></figure><figcaption>Ha Long sunrise</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-2.jpg" alt="Flight to Phu Quoc" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Flight to Phu Quoc</span><small>bay-and-beach/d4-2.jpg</small></div></figure><figcaption>Flight to Phu Quoc</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d4-3.jpg" alt="Phu Quoc beach resort" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Phu Quoc beach resort</span><small>bay-and-beach/d4-3.jpg</small></div></figure><figcaption>Phu Quoc beach resort</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Brunch</div><div class="overnight">Overnight at hotel in Phu Quoc.</div></div></article><article class="day rv" id="day-5"><div class="day-band"><div class="num">DAY 05</div><h3>Phu Quoc Island – Optional Tours</h3><div class="route">Phu Quoc</div></div><div class="day-body"><p>A free day on Phu Quoc Island to relax on the beach – or add an optional tour.</p><p class="lead">Optional tours (on request):</p><ul><li>Safari tour</li><li>Grand World tour</li><li>3-islands tour</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-1.jpg" alt="Phu Quoc beach" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Phu Quoc beach</span><small>bay-and-beach/d5-1.jpg</small></div></figure><figcaption>Phu Quoc beach</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-2.jpg" alt="Grand World Phu Quoc" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Grand World Phu Quoc</span><small>bay-and-beach/d5-2.jpg</small></div></figure><figcaption>Grand World Phu Quoc</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d5-3.jpg" alt="3-islands tour" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>3-islands tour</span><small>bay-and-beach/d5-3.jpg</small></div></figure><figcaption>3-islands tour</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast, Lunch</div><div class="overnight">Overnight at hotel in Phu Quoc.</div></div></article><article class="day rv" id="day-6"><div class="day-band"><div class="num">DAY 06</div><h3>Phu Quoc Departure</h3><div class="route">Phu Quoc → Airport</div></div><div class="day-body"><p>Enjoy breakfast and free time until your airport transfer. End of your 6 days / 5 nights Vietnam journey.</p><p class="lead">Before you go:</p><ul><li>Leisure morning at the beach resort</li><li>Last-minute shopping or coffee</li><li>Transfer to Phu Quoc airport</li></ul><div class="photos "><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-1.jpg" alt="Beach resort morning" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Beach resort morning</span><small>bay-and-beach/d6-1.jpg</small></div></figure><figcaption>Beach resort morning</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-2.jpg" alt="Phu Quoc coffee" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Phu Quoc coffee</span><small>bay-and-beach/d6-2.jpg</small></div></figure><figcaption>Phu Quoc coffee</figcaption></div><div class="figwrap"><figure class="ph "><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/bay-and-beach/d6-3.jpg" alt="Phu Quoc airport" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Phu Quoc airport</span><small>bay-and-beach/d6-3.jpg</small></div></figure><figcaption>Phu Quoc airport</figcaption></div></div><div class="meals">🍽&nbsp; Meals: Breakfast</div><div class="overnight">End of services.</div></div></article></div></section>
+
+<section class="ie-sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">What's covered</span><h2>Inclusions &amp; exclusions</h2></div>
+  <div class="ie rv"><div class="box inc"><div class="hd">✓ Package includes</div><ul><li>2 nights 3★ hotel in Hanoi (twin/double sharing)</li><li>2 nights 3★ hotel in Phu Quoc (twin/double sharing)</li><li>1 night Ha Long Bay overnight cruise — private cabin with ensuite bathroom</li><li>Domestic flight: Hanoi → Phu Quoc</li><li>Daily breakfast</li><li>Airport pick-up, drop-off and transfers</li><li>Welcome lunch and half-day Hanoi city tour</li><li>Ninh Binh day trip with sampan boat ride and lunch</li><li>Ha Long Bay cruise with kayaking, cave / island visit and meals on board</li><li>All transfers and entrance fees as per itinerary</li><li>Meals as mentioned in the itinerary</li><li>English-speaking local guides</li></ul></div>
+    <div class="box exc"><div class="hd">✕ Package excludes</div><ul><li>International flights</li><li>Vietnam visa — ₹2,500 per person</li><li>5% GST and 2% TCS</li></ul></div></div>
+</div></section>
+
+<section class="pricing"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Pricing</span><h2>Package price</h2></div>
+  <div class="ptbl rv">
+    <div class="ptbl-head"><span>Category</span><span>Price per person</span></div>
+    <div class="ptbl-row"><span class="cat">🧑 Adult</span><span class="amt" id="pr-adult">₹41,000</span></div><div class="ptbl-row"><span class="cat">🧒 5–11 Years</span><span class="amt" id="pr-c511">₹36,000</span></div><div class="ptbl-row"><span class="cat">👶 2–4 Years</span><span class="amt" id="pr-c24">₹32,000</span></div><div class="ptbl-row"><span class="cat">🍼 Infant</span><span class="amt">Free</span></div>
+  </div>
+  <div class="paypol rv">
+    <div class="paypol-h">💳 Payment policy</div>
+    <div class="paypol-cards">
+      <div class="ppc a"><div class="ppc-lbl">At booking</div><div class="ppc-pct">70%</div><div class="ppc-sub">Confirms your spot</div></div>
+      <div class="ppc b"><div class="ppc-lbl">Before travel</div><div class="ppc-pct">30%</div><div class="ppc-sub">Balance 15 days before travel</div></div>
+    </div>
+  </div>
+  <p class="pnote">Prices are per person and exclusive of 5% GST and 2% TCS. Listed rate is for 3★ accommodation.</p>
+  <p class="visa">✈ International flights are not included (the domestic Hanoi → Phu Quoc flight is included) — we can arrange international flights on request.</p>
+  <p class="visa">Vietnam visa — ₹2,500 per person (not included).</p>
+</div></section>
+<section class="stay"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Stay &amp; meals</span><h2>Where you'll stay</h2></div>
+  <div class="tier-toggle"><button class="tier-btn on" data-tier="3" onclick="setTier('3')">3★</button><button class="tier-btn" data-tier="4" onclick="setTier('4')">4★</button><button class="tier-btn" data-tier="5" onclick="setTier('5')">5★</button></div>
+  <p class="tier-note">Tap a category to switch hotels and update the package price. Swipe each card for photos.</p><p class="tier-note" style="background:var(--off);border-left:3px solid var(--teal);padding:9px 12px;border-radius:8px;font-style:normal;color:var(--ink);margin:-4px 0 16px">🕒 <b>Check-in: 2:00 PM.</b> Early check-in is subject to hotel room availability.</p>
+  <div class="hcity" data-city="hanoi">
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('hanoi',-1)">&#8249;</button><div class="hc-track" id="track-hanoi"></div><button class="hc-arrow next" onclick="hcMove('hanoi',1)">&#8250;</button></div>
+  <div class="hc-dots" id="dots-hanoi"></div>
+  <div class="hc-body"><div class="hc-name" id="name-hanoi">HM Hanoi Boutique Hotel</div>
+    <div class="hc-meta"><span class="star-badge" id="star-hanoi">★★★</span><span>·</span><span>2 nights in Hanoi</span></div>
+    <div class="hc-amen" id="amen-hanoi"></div></div>
+</div><div class="hcity" data-city="phuquoc">
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('phuquoc',-1)">&#8249;</button><div class="hc-track" id="track-phuquoc"></div><button class="hc-arrow next" onclick="hcMove('phuquoc',1)">&#8250;</button></div>
+  <div class="hc-dots" id="dots-phuquoc"></div>
+  <div class="hc-body"><div class="hc-name" id="name-phuquoc">Bauhiana Hotel</div>
+    <div class="hc-meta"><span class="star-badge" id="star-phuquoc">★★★</span><span>·</span><span>2 nights in Phu Quoc</span></div>
+    <div class="hc-amen" id="amen-phuquoc"></div></div>
+</div><div class="hcity hcity-extra" data-city="cruise">
+  <div class="hcarousel"><button class="hc-arrow prev" onclick="hcMove('cruise',-1)">&#8249;</button><div class="hc-track" id="track-cruise"></div><button class="hc-arrow next" onclick="hcMove('cruise',1)">&#8250;</button></div>
+  <div class="hc-dots" id="dots-cruise"></div>
+  <div class="hc-body"><div class="hc-name">Halong Bay Cruise</div><div class="hc-meta"><span>🚢 Overnight on board</span></div><div class="hc-amen"><span>✓ Free Wi-Fi</span><span>✓ 24-hour front desk</span><span>✓ Fitness center</span><span>✓ Restaurants</span><span>✓ Private cabin</span><span>✓ Breakfast</span><span>✓ Lunch</span><span>✓ Dinner</span></div></div>
+</div>
+  <div class="fixed-stays"><h4>Also included</h4><span class="fixed-chip">✈ Domestic flight (Hanoi → Phu Quoc)</span></div>
+</div></section>
+
+
+
+<section class="book"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Booking</span><h2>How to book</h2></div>
+  <div class="cards">
+    <div class="bcard rv"><div class="ic">💳</div><div class="step">Step 1 — Confirm</div>
+      <h4>Payment plan</h4>
+      <p>Pay <b>70%</b> of the package amount to confirm your booking. The remaining balance is payable in full <b>15 days before travel</b>.</p></div>
+    <div class="bcard rv"><div class="ic">📄</div><div class="step">Step 2 — Share</div>
+      <h4>Documents to book</h4>
+      <ul><li>Passport scanned copy — front &amp; back</li>
+      <li>One passport-size digital photo with a white background</li></ul></div>
+    <div class="bcard rv"><div class="ic">🛂</div><div class="step">Step 3 — Visa</div>
+      <h4>Visa processing</h4>
+      <p>Vietnam visa processing takes <b>5–10 days</b>, so please share your documents early. (Visa fee is billed separately as noted in the package.)</p></div>
+  </div>
+  <p class="foot-note">To confirm your booking or ask a question, just <b>reply on WhatsApp</b> with your preferred travel dates.</p>
+</div></section>
+
+
+<section class="gallery"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Happy travellers</span><h2>Real people, real memories</h2></div>
+  <div class="gal-outer">
+    <button class="gal-arrow" onclick="galMove(-1)" aria-label="Previous">&#8249;</button>
+    <div class="gal-track" id="galTrack"><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g1.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g1.jpg</small></div><div class="gal-cap">Halong Bay</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g2.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g2.jpg</small></div><div class="gal-cap">Sapa terraces</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g3.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g3.jpg</small></div><div class="gal-cap">Hanoi Old Quarter</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g4.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g4.jpg</small></div><div class="gal-cap">Ninh Binh</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g5.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g5.jpg</small></div><div class="gal-cap">Ha Giang Loop</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g6.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g6.jpg</small></div><div class="gal-cap">Golden Bridge</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g7.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g7.jpg</small></div><div class="gal-cap">Hoi An lanterns</div></div><div class="gal-slide"><img data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/gallery/g8.jpg" alt="Happy travellers" loading="lazy" onerror="ktImg(this)"><div class="ph-fallback" style="display:none"><span>Happy travellers</span><small>gallery/g8.jpg</small></div><div class="gal-cap">Phu Quoc</div></div></div>
+    <button class="gal-arrow" onclick="galMove(1)" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="gal-dots" id="galDots"></div>
+  <div class="ghint">Tap a photo to zoom · swipe or use arrows</div>
+</div></section>
+<footer><a class="brand" href="../index.html"><img src="../assets/kt-white.png" alt="Kairali Trails"></a>
+  <div class="tag">Thank you for choosing Kairali Trails</div>
+  <a class="mail" href="mailto:Contact@kairalitrails.com">Contact@kairalitrails.com</a>
+  <div class="fine">www.kairalitrails.com · Curated Vietnam journeys</div></footer>
+
+<script>
+(function(){
+ var nav=document.querySelector('.nav'),cover=document.querySelector('.cover, .hero');
+ if(nav){var t=cover?cover.offsetHeight*0.72:400;
+   addEventListener('scroll',function(){nav.classList.toggle('show',scrollY>t)},{passive:true});}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script><div class="lb" id="lb"><span class="lb-x" onclick="lbClose()">&times;</span><button class="lb-nav prev" onclick="lbStep(-1)" aria-label="Previous">&#8249;</button><img id="lbImg" src="" alt=""><button class="lb-nav next" onclick="lbStep(1)" aria-label="Next">&#8250;</button><div class="lb-count" id="lbCount"></div></div>
+<script>
+(function(){
+ var lb=document.getElementById('lb'),lbi=document.getElementById('lbImg'),lbc=document.getElementById('lbCount');
+ var group=[],gi=0;
+ function srcOf(im){return im.currentSrc||im.src;}
+ function show(){lbi.src=srcOf(group[gi]);lbc.textContent=group.length>1?(gi+1)+' / '+group.length:'';}
+ window.lbStep=function(d){if(!group.length)return;gi=(gi+d+group.length)%group.length;show();};
+ window.lbClose=function(){lb.classList.remove('on');};
+ lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
+ var sels='.photos figure.ph, .meal-row .meal-ph, .hotel-wrap .hotel-main, .hotel-wrap .hotel-card, .gal-track .gal-slide, .hc-track .hc-slide';
+ document.querySelectorAll(sels).forEach(function(el){
+  el.style.cursor='pointer';
+  el.addEventListener('click',function(){
+   var im=el.querySelector('img'); if(!im||im.style.display==='none')return;
+   var box=el.closest('.photos, .meal-row, .hc-track, .gal-track')||el;
+   group=Array.prototype.slice.call(box.querySelectorAll('img')).filter(function(x){return x.style.display!=='none';});
+   gi=group.indexOf(im); if(gi<0)gi=0; if(box.classList.contains('photos')){group=[im];gi=0;lb.classList.add('solo');}else{lb.classList.remove('solo');} show(); lb.classList.add('on');
+  });
+ });
+ var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+ lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)lbStep(dx<0?1:-1);x0=null;},{passive:true});
+ document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+ var track=document.getElementById('galTrack');
+ if(track){var dots=document.getElementById('galDots'),s=track.children,idx=0;
+  for(var i=0;i<s.length;i++){(function(i){var b=document.createElement('b');if(!i)b.className='on';b.onclick=function(ev){ev.stopPropagation();go(i)};dots.appendChild(b);})(i);}
+  function go(i){idx=Math.max(0,Math.min(s.length-1,i));s[idx].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});for(var d=0;d<dots.children.length;d++)dots.children[d].className=d===idx?'on':'';}
+  window.galMove=function(d){go(idx+d)};
+ }
+})();
+</script>
+<div class="hclb" id="hclb"><button class="x" onclick="closeLB()">&times;</button><button class="nav p" onclick="lbStep(-1)">&#8249;</button><img id="hclb-img" src=""><button class="nav n" onclick="lbStep(1)">&#8250;</button><div class="cnt" id="hclb-cnt"></div></div><script>(function(){var D={"BASE": "https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam", "PKG": "bay-and-beach", "CITIES": ["hanoi", "phuquoc"], "ALL": ["hanoi", "phuquoc", "cruise"], "TIERS": {"3": {"price": {"adult": 41000, "c511": 36000, "c24": 32000}, "amen": ["Wi-Fi", "Breakfast", "AC", "SIC transfers"], "hotels": {"hanoi": "HM Hanoi Boutique Hotel", "phuquoc": "Bauhiana Hotel"}}, "4": {"price": {"adult": 47000, "c511": 42000, "c24": 38000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "SIC transfers"], "hotels": {"hanoi": "Ja Cosmo Hotel & Spa", "phuquoc": "Ocean Pearl"}}, "5": {"price": {"adult": 55000, "c511": 50000, "c24": 46000}, "amen": ["Wi-Fi", "Breakfast", "AC", "Pool", "Spa", "City / sea view"], "hotels": {"hanoi": "La Sieta Hotel & Spa", "phuquoc": "Thiên Thanh Hotel"}}}};var BASE=D.BASE,PKG=D.PKG,CITIES=D.CITIES,ALL=D.ALL,TIERS=D.TIERS;var EXT=['jpg','jpeg','png','webp'];var LB=[],LBi=0;
+function fmt(n){return typeof n==='number'?('₹'+n.toLocaleString('en-IN')):n;}
+function probe(rel,cb){var k=0;(function t(){if(k>=EXT.length){cb(null);return;}var u=BASE+'/'+PKG+'/'+rel+'.'+EXT[k];var im=new Image();im.onload=function(){cb(u);};im.onerror=function(){k++;t();};im.src=u;})();}
+function seq(pre,onU,done){var i=1,o=[];(function nx(){if(i>30){done(o);return;}probe(pre+i,function(u){if(u){o.push(u);onU(u);i++;nx();}else done(o);});})();}
+function dots(c,n){var d=document.getElementById('dots-'+c);if(!d)return;d.innerHTML='';if(n<2)return;for(var j=0;j<n;j++){var x=document.createElement('span');x.className='hc-dot'+(j===0?' on':'');d.appendChild(x);}}
+function syncDots(c){var tr=document.getElementById('track-'+c),d=document.getElementById('dots-'+c);if(!tr||!d||!d.children.length)return;var idx=Math.round(tr.scrollLeft/tr.clientWidth);[].forEach.call(d.children,function(x,j){x.classList.toggle('on',j===idx);});}
+function buildCarousel(c,t){var tr=document.getElementById('track-'+c);if(!tr)return;tr.innerHTML='';var urls=[];
+ function add(u){var s=document.createElement('div');s.className='hc-slide';var im=document.createElement('img');im.src=u;im.loading='lazy';s.appendChild(im);s.onclick=function(){openLB(urls,urls.indexOf(u));};tr.appendChild(s);dots(c,urls.length);}
+ seq(c+'-'+t+'star-',function(u){urls.push(u);add(u);},function(){
+  if(tr.children.length===0){var ph=document.createElement('div');ph.className='hc-slide';ph.innerHTML='<div class=\'hc-ph\'>Photos coming soon<small>'+c+'-'+t+'star-1.jpg</small></div>';tr.appendChild(ph);}
+  dots(c,urls.length);var _car=tr.closest('.hcarousel');if(_car){var _ar=_car.querySelectorAll('.hc-arrow');for(var _a=0;_a<_ar.length;_a++){_ar[_a].style.display=urls.length>1?'':'none';}}});
+ tr.onscroll=function(){syncDots(c);};}
+function openLB(u,i){if(!u.length)return;LB=u;LBi=i;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;document.getElementById('hclb').classList.add('on');}
+window.closeLB=function(){document.getElementById('hclb').classList.remove('on');};
+window.lbStep=function(d){if(!LB.length)return;LBi=(LBi+d+LB.length)%LB.length;document.getElementById('hclb-img').src=LB[LBi];document.getElementById('hclb-cnt').textContent=(LBi+1)+' / '+LB.length;};
+window.hcMove=function(c,dir){var tr=document.getElementById('track-'+c);if(tr)tr.scrollBy({left:dir*tr.clientWidth,behavior:'smooth'});};
+window.setTier=function(t){var d=TIERS[t];['adult','c511','c24'].forEach(function(k){var el=document.getElementById('pr-'+k);if(el)el.textContent=fmt(d.price[k]);});
+ CITIES.forEach(function(c){var nm=document.getElementById('name-'+c);if(nm)nm.textContent=d.hotels[c];var st=document.getElementById('star-'+c);if(st)st.textContent='★'.repeat(parseInt(t));var am=document.getElementById('amen-'+c);if(am)am.innerHTML=d.amen.map(function(a){return '<span>✓ '+a+'</span>';}).join('');});
+ ALL.forEach(function(c){buildCarousel(c,t);});
+ document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.toggle('on',b.dataset.tier===t);});};
+document.addEventListener('keydown',function(e){if(!document.getElementById('hclb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+setTier('3');})();</script><script>(function(){window.addEventListener("wheel",function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});window.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&["+","-","=","0","_"].indexOf(e.key)!==-1)e.preventDefault();});["gesturestart","gesturechange","gestureend"].forEach(function(g){document.addEventListener(g,function(e){e.preventDefault();});});})();</script></body></html>
