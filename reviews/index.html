@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Travellers Reviews · Kairali Trails Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kt-reviews.css">
+<style>
+:root{--teal:#0496a5;--teal-d:#037885;--green:#24fbaa;--dark:#052a30;--ink:#0e2e34;--muted:#5a9aa5;--line:#d7eef1;--sh:0 8px 30px rgba(4,150,165,.14);--gold:#ffb02e}
+*{box-sizing:border-box}body{margin:0;font-family:'Poppins',system-ui,sans-serif;background:#eef7f8;color:var(--ink)}a{color:inherit}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(4,150,165,.06)}
+.nav .brand{font-weight:800;color:var(--teal);letter-spacing:.5px;text-decoration:none;font-size:18px}
+.nav .brand small{display:block;font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:600}
+.nav .back{font-size:13px;font-weight:600;color:var(--teal-d);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:20px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.hero{padding:26px 0 6px;text-align:center}.hero .eyebrow{color:var(--teal);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase}.hero h1{margin:6px 0 0;font-size:26px}
+.sec-h{display:flex;align-items:center;gap:8px;margin:22px 2px 12px}.sec-h .ic{font-size:20px}.sec-h h2{margin:0;font-size:19px}
+.write{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;font-size:14px;padding:12px 22px;border-radius:26px;text-decoration:none;box-shadow:0 8px 20px rgba(4,150,165,.3)}
+.footer{background:var(--dark);color:#cfeef2;text-align:center;padding:26px 16px;font-size:12px;margin-top:34px}
+</style></head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/index.html">Kairali<small>TRAILS</small></a>
+  <a class="back" href="/index.html">← All packages</a>
+</nav>
+<div class="wrap">
+  <div class="hero"><div class="eyebrow">Loved by travellers</div><h1>Travellers Reviews &amp; Ratings</h1></div>
+  <div class="rvw-sum" id="rvwSummary" style="margin-top:16px"></div>
+  <div style="text-align:center;margin:2px 0 6px"><a class="write" href="/review-submit/index.html">✍️ Write a review</a></div>
+
+  <div class="sec-h"><span class="ic">🎥</span><h2>Love from our travellers</h2></div>
+  <div class="vt-mqwrap"><div class="vt-track" id="vtestTrack"></div></div>
+
+  <div class="sec-h"><span class="ic">💬</span><h2>What travellers say</h2></div>
+  <div class="rtilt"><div class="rtilt-plane"><div class="rtilt-track" id="rvwTrack"></div></div></div>
+</div>
+<div class="footer">Kairali Trails · Vietnam · Thank you for travelling with us</div>
+<script src="/assets/kt-config.js"></script>
+<script src="/assets/shared_render.js"></script>
+</body></html>

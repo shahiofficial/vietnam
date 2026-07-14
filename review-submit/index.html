@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Share your trip · Kairali Trails Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0496a5;--teal-d:#037885;--green:#24fbaa;--dark:#052a30;--ink:#0e2e34;--muted:#5a9aa5;--line:#d7eef1;--sh:0 8px 30px rgba(4,150,165,.14);--gold:#ffb02e}
+*{box-sizing:border-box}body{margin:0;font-family:'Poppins',system-ui,sans-serif;background:#eef7f8;color:var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#fff;box-shadow:0 2px 12px rgba(4,150,165,.06)}
+.nav .brand{font-weight:800;color:var(--teal);letter-spacing:.5px;text-decoration:none;font-size:18px}
+.nav .brand small{display:block;font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:600}
+.wrap{max-width:560px;margin:0 auto;padding:22px 16px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh);padding:22px}
+h1{font-size:22px;margin:0 0 4px}.sub{color:var(--muted);font-size:14px;margin:0 0 20px}
+label{display:block;font-weight:600;font-size:13px;margin:16px 0 6px}
+input[type=text],textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:inherit;font-size:14px;color:var(--ink);background:#fbfdfe}
+textarea{min-height:110px;resize:vertical}input:focus,textarea:focus{outline:none;border-color:var(--teal)}
+.stars{display:flex;gap:6px;font-size:30px;color:#dfe7e9;cursor:pointer}.stars .s.on{color:var(--gold)}
+.uploader{border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--muted);cursor:pointer;background:#fbfdfe}
+.uploader.drag{border-color:var(--teal);background:#f0fbfc}
+.previews{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.previews .pv{position:relative;width:72px;height:72px;border-radius:10px;overflow:hidden}.previews .pv img{width:100%;height:100%;object-fit:cover}
+.previews .pv b{position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
+.btn{width:100%;margin-top:22px;background:var(--teal);color:#fff;font-weight:700;font-size:15px;border:none;border-radius:26px;padding:14px;cursor:pointer;box-shadow:0 8px 20px rgba(4,150,165,.3)}
+.btn:disabled{opacity:.6;cursor:default}
+.note{font-size:11px;color:var(--muted);margin-top:12px;text-align:center}
+.ok{display:none;text-align:center;padding:20px}.ok .big{font-size:44px}.ok h2{margin:8px 0 4px}
+.err{display:none;color:#c0392b;font-size:13px;margin-top:10px;text-align:center}
+</style></head>
+<body>
+<nav class="nav"><a class="brand" href="/index.html">Kairali<small>TRAILS</small></a></nav>
+<div class="wrap">
+  <div class="card" id="formCard">
+    <h1>Share your Vietnam trip ✨</h1>
+    <p class="sub">Thank you for travelling with us! Add a few photos and tell future travellers about your experience.</p>
+    <label>Your name</label>
+    <input type="text" id="f-name" placeholder="e.g. Janani Jaaz" maxlength="60">
+    <label>Where did you go? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+    <input type="text" id="f-place" placeholder="e.g. Hanoi & Ha Long Bay" maxlength="60">
+    <label>Your rating</label>
+    <div class="stars" id="stars"></div>
+    <label>Your review</label>
+    <textarea id="f-text" placeholder="What made your trip special? How was the planning, hotels, transfers, guides?" maxlength="800"></textarea>
+    <label>Add your travel photos <span style="font-weight:400;color:var(--muted)">(up to 6)</span></label>
+    <div class="uploader" id="uploader">📷 Tap to add photos, or drag them here</div>
+    <input type="file" id="f-files" accept="image/*" multiple hidden>
+    <div class="previews" id="previews"></div>
+    <button class="btn" id="submit">Submit review</button>
+    <div class="err" id="err"></div>
+    <p class="note">Your review is checked before it appears on the website.</p>
+  </div>
+  <div class="card ok" id="ok"><div class="big">🌴</div><h2>Thank you!</h2><p class="sub">Your review has been received. Once approved it'll appear on our travellers page. We appreciate you!</p></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/assets/kt-config.js"></script>
+<script>
+/* Vietnam: writes to reviews_vn table + reviews-vn photo bucket. Uses the same anon key. */
+const SUPABASE_URL = 'https://btulhnrguotqjkhyeazk.supabase.co';
+const SUPABASE_ANON_KEY = window.KT_SB_KEY || '';
+const TABLE = 'reviews_vn';
+const BUCKET = 'reviews-vn';
+
+let rating = 0, files = [];
+const starsEl = document.getElementById('stars');
+starsEl.innerHTML = [1,2,3,4,5].map(i=>`<span class="s" data-v="${i}">★</span>`).join('');
+starsEl.querySelectorAll('.s').forEach(s=>{ s.onclick=()=>{rating=+s.dataset.v; starsEl.querySelectorAll('.s').forEach(x=>x.classList.toggle('on',+x.dataset.v<=rating));}; });
+
+const fileInput=document.getElementById('f-files'), up=document.getElementById('uploader'), prev=document.getElementById('previews');
+up.onclick=()=>fileInput.click();
+up.ondragover=e=>{e.preventDefault();up.classList.add('drag');};
+up.ondragleave=()=>up.classList.remove('drag');
+up.ondrop=e=>{e.preventDefault();up.classList.remove('drag');addFiles(e.dataTransfer.files);};
+fileInput.onchange=()=>addFiles(fileInput.files);
+function addFiles(list){ [...list].forEach(f=>{ if(files.length<6 && f.type.startsWith('image/')) files.push(f); }); drawPreviews(); }
+function drawPreviews(){ prev.innerHTML=''; files.forEach((f,i)=>{ const url=URL.createObjectURL(f); const d=document.createElement('div'); d.className='pv'; d.innerHTML=`<img src="${url}"><b data-i="${i}">×</b>`; prev.appendChild(d); }); prev.querySelectorAll('b').forEach(b=>b.onclick=()=>{files.splice(+b.dataset.i,1);drawPreviews();}); }
+
+const btn=document.getElementById('submit'), err=document.getElementById('err');
+btn.onclick=async()=>{
+  const name=document.getElementById('f-name').value.trim();
+  const place=document.getElementById('f-place').value.trim();
+  const text=document.getElementById('f-text').value.trim();
+  err.style.display='none';
+  if(!name) return fail('Please add your name.');
+  if(!rating) return fail('Please tap a star rating.');
+  if(text.length<10) return fail('Please write a few words about your trip.');
+  btn.disabled=true; btn.textContent='Submitting…';
+  try{
+    if(SUPABASE_ANON_KEY){
+      const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const urls=[];
+      for(let i=0;i<files.length;i++){
+        const f=files[i];
+        const path=`${Date.now()}-${i}-${f.name.replace(/[^a-z0-9.]+/gi,'-').toLowerCase()}`;
+        const {error:upErr}=await sb.storage.from(BUCKET).upload(path,f,{upsert:false});
+        if(upErr) throw upErr;
+        urls.push(sb.storage.from(BUCKET).getPublicUrl(path).data.publicUrl);
+      }
+      const {error:insErr}=await sb.from(TABLE).insert({name,place,rating,text,photos:urls,approved:false});
+      if(insErr) throw insErr;
+    } else { await new Promise(r=>setTimeout(r,700)); }
+    document.getElementById('formCard').style.display='none';
+    document.getElementById('ok').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }catch(e){ console.error(e); fail('Something went wrong — please try again. ('+e.message+')'); btn.disabled=false; btn.textContent='Submit review'; }
+};
+function fail(m){err.textContent=m;err.style.display='block';btn.disabled=false;btn.textContent='Submit review';}
+</script>
+</body></html>
