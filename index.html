@@ -226,6 +226,12 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
   padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:.25s;white-space:nowrap}
 .card:hover .view{background:linear-gradient(115deg,var(--teal),var(--green));color:var(--dark)}
 .list-note{text-align:center;color:var(--muted);font-size:.86rem;padding:8px var(--pad) 64px}
+
+/* mobile-tight spacing */
+@media(max-width:640px){
+  .grid{gap:14px;padding-top:26px;padding-bottom:34px}
+  .vtest,.rvw{padding-top:6px;padding-bottom:10px}
+}
 </style><script>function ktImg(el){var ex=['jpg','jpeg','png','JPG','JPEG','PNG','webp','WEBP','jfif'];var i=(el.dataset.i?parseInt(el.dataset.i):0)+1;if(i<ex.length){el.dataset.i=i;el.src=el.dataset.base+'.'+ex[i];}else{el.onerror=null;el.style.display='none';var fb=el.nextElementSibling;if(fb&&(fb.classList.contains('ph-fallback')||fb.classList.contains('card-ph')))fb.style.display='flex';}}</script>  <link rel="stylesheet" href="/assets/kt-reviews.css">
 </head><body>
 <nav class="nav"><a class="brand" href="#top"><img src="assets/kt-dark.png" alt="Kairali Trails"></a>
