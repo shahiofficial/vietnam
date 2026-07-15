@@ -326,7 +326,7 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
   <div class="vh-media" id="vhMedia">
     <img class="vh-poster" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.jpg" alt="" aria-hidden="true">
     <video class="vh-video" id="vhVideo" autoplay muted playsinline preload="auto" poster="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.jpg">
-      <source src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.mp4" type="video/mp4">
+      <source src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/vietnam-halong-hero.mp4" type="video/mp4">
     </video>
     <div class="vh-g vh-g-top" aria-hidden="true"></div>
     <div class="vh-g vh-g-mid" aria-hidden="true"></div>
@@ -461,7 +461,7 @@ document.addEventListener('click',function(){var m=document.getElementById('sort
   if(v){
     v.removeAttribute('loop');
     v.addEventListener('ended',function(){try{v.pause();}catch(e){}},{once:true});
-    var p=v.play&&v.play(); if(p&&p.catch)p.catch(function(){});
+    var p=v.play&&v.play(); if(p&&p.catch)p.catch(function(){});function retry(){if(v.paused&&!v.ended){var q=v.play();if(q&&q.catch)q.catch(function(){});}}document.addEventListener('touchstart',retry,{once:true,passive:true});document.addEventListener('click',retry,{once:true});document.addEventListener('visibilitychange',function(){if(!document.hidden)retry();});
   }
   /* fit VIETNAM to ~92% of container width, stable before reveal */
   function fit(){
