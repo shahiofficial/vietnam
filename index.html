@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Vietnam Packages · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Vietnam Packages · Kairali Trails</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/nyght-serif" rel="stylesheet"><style>
 :root{
   --teal:#0496a5; --teal-d:#037885; --green:#24fbaa; --cyan:#29ffff; --blue:#1e98f7;
   --orange:#f3792a; --yellow:#fefdbb;
@@ -196,7 +197,7 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
 .hero .meta div b{display:block;font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--green)}
 .hero .meta div span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#bfeee2}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));
   gap:clamp(20px,3vw,30px);padding-top:clamp(44px,6vw,72px);padding-bottom:20px}
 .card{background:var(--card);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh);
   border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
@@ -226,6 +227,54 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
   padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:.25s;white-space:nowrap}
 .card:hover .view{background:linear-gradient(115deg,var(--teal),var(--green));color:var(--dark)}
 .list-note{text-align:center;color:var(--muted);font-size:.86rem;padding:8px var(--pad) 64px}
+
+/* ===== cinematic hero (vhero) ===== */
+.vhero{position:relative;overflow:hidden;color:#fff;background:var(--dark);display:flex;
+  min-height:calc(100vh - 56px);min-height:calc(100svh - 56px)}
+@supports(height:100dvh){.vhero{min-height:calc(100dvh - 56px)}}
+.vh-media{position:absolute;inset:0;z-index:0;will-change:transform}
+.vh-poster,.vh-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.vh-g{position:absolute;inset:0;pointer-events:none}
+.vh-g-top{background:linear-gradient(180deg,rgba(5,42,48,.48),rgba(5,42,48,0) 26%)}
+.vh-g-mid{background:rgba(5,42,48,.08)}
+.vh-g-bot{background:linear-gradient(0deg,rgba(5,42,48,.78) 0%,rgba(5,42,48,.30) 36%,rgba(5,42,48,0) 58%)}
+.vh-in{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;justify-content:space-between;
+  padding:calc(env(safe-area-inset-top,0px) + 20px) 16px calc(env(safe-area-inset-bottom,0px) + 30px);
+  max-width:var(--wrap);margin:0 auto;box-sizing:border-box}
+.vh-brand{display:inline-block;opacity:0;transform:translateY(10px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.vh-brand img{height:40px;width:auto;display:block}
+.vh-brand.on{opacity:1;transform:none}
+.vh-bottom{will-change:transform}
+.vh-kicker{position:relative;height:1.6em;overflow:hidden;margin-bottom:4px}
+.vh-line{position:absolute;left:1px;top:0;font-family:'DM Sans',sans-serif;font-weight:500;text-transform:uppercase;
+  letter-spacing:.34em;font-size:clamp(.78rem,3.2vw,1.02rem);color:#fff;white-space:nowrap;
+  transform:translateY(120%);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.vh-kicker.k1 .vh-discover{transform:translateY(0)}
+.vh-kicker.swap .vh-discover{transform:translateY(-120%)}
+.vh-kicker.swap .vh-ways{transform:translateY(0)}
+.vh-word{margin:0;padding:0;font-family:'Anton',var(--f-display);font-weight:400;text-transform:uppercase;
+  color:var(--green);line-height:.94;letter-spacing:.012em;font-size:72px;text-shadow:none}
+.vh-letters{display:inline-flex;overflow:hidden;padding-bottom:.03em;vertical-align:top}
+.vh-word .vl{display:inline-block;transform:translateY(112%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.vh-word.in .vl{transform:translateY(0)}
+.vh-word.drift{transition:transform 8s cubic-bezier(.16,1,.3,1)}
+.vh-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:18px;max-width:430px}
+.vh-msk{display:block;overflow:hidden}
+.vh-msk>b,.vh-msk>small,.vh-msk>em{display:block;transform:translateY(115%);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.vh-rv.on .vh-msk>b,.vh-rv.on .vh-msk>small,.vh-rv.on .vh-msk>em{transform:translateY(0)}
+.vh-stat b{font-family:'Anton',var(--f-display);font-weight:400;font-size:clamp(1.3rem,5.6vw,1.8rem);letter-spacing:.02em;color:#fff}
+.vh-stat b i{font-style:normal;color:var(--green)}
+.vh-stat small{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.3em;color:#cfeef0;margin-top:3px}
+.vh-sub{margin-top:16px}
+.vh-sub em{font-style:normal;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.28em;color:#9fd8d2}
+@media(min-width:768px){.vh-in{padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px)}.vh-brand img{height:46px}}
+@media(prefers-reduced-motion:reduce){
+  .vh-brand,.vh-word .vl,.vh-rv .vh-msk>b,.vh-rv .vh-msk>small,.vh-rv .vh-msk>em{opacity:1;transform:none;transition:none}
+  .vh-line{transition:none}
+  .vh-discover{display:none}
+  .vh-ways{transform:translateY(0)}
+  .vh-word.drift{transition:none}
+}
 
 /* mobile-tight spacing */
 @media(max-width:640px){
@@ -273,15 +322,32 @@ footer .fine{color:#5f8e93;font-size:.78rem;margin-top:22px}
 <nav class="nav"><a class="brand" href="#top"><img src="assets/kt-dark.png" alt="Kairali Trails"></a>
   <a class="back" href="#packages">View packages ↓</a></nav>
 
-<header class="hero" id="top">
-  <img class="bg" data-base="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.jpg" alt="" onerror="ktImg(this)">
-  <div class="wrap">
-  <a class="brand" href="#top"><img src="assets/kt-white.png" alt="Kairali Trails"></a>
-  <h1>Discover <em>Vietnam</em></h1>
-  <div class="meta"><div><b id="pkg-count">13</b><span>Curated packages</span></div>
-    <div><b>4–10</b><span>Day journeys</span></div>
-    <div><b>3★–5★</b><span>Hotel options</span></div></div>
-</div></header>
+<header class="vhero" id="top">
+  <div class="vh-media" id="vhMedia">
+    <img class="vh-poster" src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.jpg" alt="" aria-hidden="true">
+    <video class="vh-video" id="vhVideo" autoplay muted playsinline preload="auto" poster="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.jpg">
+      <source src="https://btulhnrguotqjkhyeazk.supabase.co/storage/v1/object/public/vietnam/hero.mp4" type="video/mp4">
+    </video>
+    <div class="vh-g vh-g-top" aria-hidden="true"></div>
+    <div class="vh-g vh-g-mid" aria-hidden="true"></div>
+    <div class="vh-g vh-g-bot" aria-hidden="true"></div>
+  </div>
+  <div class="vh-in">
+    <a class="vh-brand" id="vhBrand" href="#top"><img src="assets/kt-white.png" alt="Kairali Trails"></a>
+    <div class="vh-bottom" id="vhWordWrap">
+      <div class="vh-kicker" id="vhKicker" aria-hidden="true">
+        <span class="vh-line vh-discover">DISCOVER</span>
+        <span class="vh-line vh-ways">16 WAYS TO</span>
+      </div>
+      <h1 class="vh-word" id="vhWord" aria-label="Vietnam"><span class="vh-letters" aria-hidden="true"><span class="vl">V</span><span class="vl">I</span><span class="vl">E</span><span class="vl">T</span><span class="vl">N</span><span class="vl">A</span><span class="vl">M</span></span></h1>
+      <div class="vh-stats">
+        <div class="vh-stat vh-rv"><span class="vh-msk"><b>04<i>—</i>10</b></span><span class="vh-msk"><small>DAYS</small></span></div>
+        <div class="vh-stat vh-rv"><span class="vh-msk"><b>3★ <i>→</i> 5★</b></span><span class="vh-msk"><small>STAYS</small></span></div>
+      </div>
+      <div class="vh-sub vh-rv"><span class="vh-msk"><em>CURATED FOR EVERY KIND OF TRAVELLER</em></span></div>
+    </div>
+  </div>
+</header>
 
 <div class="toolbar"><div class="tb-in">
   <div class="tb-left">
@@ -386,4 +452,49 @@ document.addEventListener('click',function(){var m=document.getElementById('sort
 })();
 </script>
 
+<script id="vhero-script">
+(function(){
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var v=document.getElementById('vhVideo'),media=document.getElementById('vhMedia');
+  var word=document.getElementById('vhWord'),kick=document.getElementById('vhKicker');
+  var brand=document.getElementById('vhBrand'),wrap=document.getElementById('vhWordWrap');
+  if(v){
+    v.removeAttribute('loop');
+    v.addEventListener('ended',function(){try{v.pause();}catch(e){}},{once:true});
+    var p=v.play&&v.play(); if(p&&p.catch)p.catch(function(){});
+  }
+  /* fit VIETNAM to ~92% of container width, stable before reveal */
+  function fit(){
+    if(!word)return;
+    var box=word.parentElement.clientWidth||window.innerWidth-32;
+    word.style.fontSize='100px';
+    var w=word.querySelector('.vh-letters').scrollWidth;
+    if(w>0){var size=Math.min(100*(box*0.92)/w,230);word.style.fontSize=size+'px';}
+  }
+  fit(); window.addEventListener('resize',function(){fit();},{passive:true});
+  if(rm){ if(kick)kick.classList.add('swap'); return; }
+  /* stagger letters */
+  var ls=word?word.querySelectorAll('.vl'):[];
+  for(var i=0;i<ls.length;i++){ls[i].style.transitionDelay=(i*45)+'ms';}
+  var st=document.querySelectorAll('.vh-rv');
+  setTimeout(function(){if(brand)brand.classList.add('on');},150);
+  setTimeout(function(){if(kick)kick.classList.add('k1');},350);
+  setTimeout(function(){if(word){word.classList.add('in');
+    requestAnimationFrame(function(){word.classList.add('drift');word.style.transform='translateY(-4px) scale(1.02)';});}},550);
+  setTimeout(function(){for(var i=0;i<st.length;i++){(function(el,k){setTimeout(function(){el.classList.add('on');},k*110);})(st[i],i);}},1200);
+  setTimeout(function(){if(kick)kick.classList.add('swap');},2900);
+  /* restrained parallax over first ~340px */
+  var ticking=false;
+  function onScroll(){
+    if(ticking)return; ticking=true;
+    requestAnimationFrame(function(){
+      var y=Math.min(window.scrollY||0,340);
+      if(media)media.style.transform='translateY('+(y*0.22)+'px)';
+      if(wrap)wrap.style.transform='translateY('+(y*0.10)+'px)';
+      ticking=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+</script>
 </body></html>
